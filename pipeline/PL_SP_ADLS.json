@@ -1,0 +1,58 @@
+{
+	"name": "PL_SP_ADLS",
+	"properties": {
+		"activities": [
+			{
+				"name": "Stored procedurecustomer",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[insertcustomer]",
+					"storedProcedureParameters": {
+						"Customerid": {
+							"value": "123",
+							"type": "Int32"
+						},
+						"Firstname": {
+							"value": "ritika",
+							"type": "String"
+						},
+						"Lastname": {
+							"value": "hello",
+							"type": "String"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "LS_SQLSERVER",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"parameters": {
+			"Customerid": {
+				"type": "string",
+				"defaultValue": "1"
+			},
+			"Firstname": {
+				"type": "string",
+				"defaultValue": "Ritika"
+			},
+			"Lastname": {
+				"type": "string",
+				"defaultValue": "hello"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2026-07-09T07:55:12Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

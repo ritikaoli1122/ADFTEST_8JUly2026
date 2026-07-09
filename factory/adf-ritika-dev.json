@@ -1,0 +1,15 @@
+{
+	"name": "adf-ritika-dev",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "cd2481a3-fea5-4da1-8b42-988825d22e85",
+		"tenantId": "dfc4538b-6e24-40cd-adf2-7645e017511c"
+	}
+}
