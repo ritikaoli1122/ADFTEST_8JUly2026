@@ -1,0 +1,63 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adf-ritika-dev"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"LS_REST_ADLS_Parquet_accountKey": {
+			"value": ""
+		},
+		"LS_SQLSERVER_password": {
+			"value": ""
+		},
+		"LS_SQLSERVER_PARQUET_ADLS_accountKey": {
+			"value": ""
+		},
+		"LS_SqlServerTable1_password": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://adlsritikaoli.dfs.core.windows.net/"
+		},
+		"LS_REST_ADLS_Parquet_properties_typeProperties_url": {
+			"value": "https://adlsritikaoli.dfs.core.windows.net/"
+		},
+		"LS_RestResource_properties_typeProperties_url": {
+			"value": "https://retoolapi.dev/5yDVOt/data"
+		},
+		"LS_SQLSERVER_properties_typeProperties_server": {
+			"value": "localhost\\SQLEXPRESS"
+		},
+		"LS_SQLSERVER_properties_typeProperties_database": {
+			"value": "Visionboard"
+		},
+		"LS_SQLSERVER_properties_typeProperties_userName": {
+			"value": "ritika"
+		},
+		"LS_SQLSERVER_PARQUET_ADLS_properties_typeProperties_url": {
+			"value": "https://adlsritikaoli.dfs.core.windows.net/"
+		},
+		"LS_SqlServerTable1_properties_typeProperties_server": {
+			"value": "localhost\\SQLEXPRESS"
+		},
+		"LS_SqlServerTable1_properties_typeProperties_database": {
+			"value": "AdventureWorks2022"
+		},
+		"LS_SqlServerTable1_properties_typeProperties_userName": {
+			"value": "ritika"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
