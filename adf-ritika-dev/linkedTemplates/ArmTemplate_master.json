@@ -15,6 +15,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
 		},
+		"LS_ADLS_CSV_BLOB_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_ADLS_CSV_BLOB'"
+		},
 		"LS_REST_ADLS_Parquet_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_REST_ADLS_Parquet'"
@@ -27,11 +31,23 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_SQLSERVER_PARQUET_ADLS'"
 		},
+		"LS_SqlServer1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_SqlServer1'"
+		},
 		"LS_SqlServerTable1_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'LS_SqlServerTable1'"
 		},
+		"SqlServer1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'SqlServer1'"
+		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsritikaoli.dfs.core.windows.net/"
+		},
+		"LS_ADLS_CSV_BLOB_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsritikaoli.dfs.core.windows.net/"
 		},
@@ -59,6 +75,18 @@
 			"type": "string",
 			"defaultValue": "https://adlsritikaoli.dfs.core.windows.net/"
 		},
+		"LS_SqlServer1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "localhost\\SQLEXPRESS"
+		},
+		"LS_SqlServer1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "AdventureWorks2022"
+		},
+		"LS_SqlServer1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "ritika"
+		},
 		"LS_SqlServerTable1_properties_typeProperties_server": {
 			"type": "string",
 			"defaultValue": "localhost\\SQLEXPRESS"
@@ -68,6 +96,18 @@
 			"defaultValue": "AdventureWorks2022"
 		},
 		"LS_SqlServerTable1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "ritika"
+		},
+		"SqlServer1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "localhost\\SQLEXPRESS"
+		},
+		"SqlServer1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "AdventureWorks2022"
+		},
+		"SqlServer1_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "ritika"
 		},
@@ -104,6 +144,9 @@
 					"AzureDataLakeStorage1_accountKey": {
 						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
 					},
+					"LS_ADLS_CSV_BLOB_accountKey": {
+						"value": "[parameters('LS_ADLS_CSV_BLOB_accountKey')]"
+					},
 					"LS_REST_ADLS_Parquet_accountKey": {
 						"value": "[parameters('LS_REST_ADLS_Parquet_accountKey')]"
 					},
@@ -113,11 +156,20 @@
 					"LS_SQLSERVER_PARQUET_ADLS_accountKey": {
 						"value": "[parameters('LS_SQLSERVER_PARQUET_ADLS_accountKey')]"
 					},
+					"LS_SqlServer1_password": {
+						"value": "[parameters('LS_SqlServer1_password')]"
+					},
 					"LS_SqlServerTable1_password": {
 						"value": "[parameters('LS_SqlServerTable1_password')]"
 					},
+					"SqlServer1_password": {
+						"value": "[parameters('SqlServer1_password')]"
+					},
 					"AzureDataLakeStorage1_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
+					},
+					"LS_ADLS_CSV_BLOB_properties_typeProperties_url": {
+						"value": "[parameters('LS_ADLS_CSV_BLOB_properties_typeProperties_url')]"
 					},
 					"LS_REST_ADLS_Parquet_properties_typeProperties_url": {
 						"value": "[parameters('LS_REST_ADLS_Parquet_properties_typeProperties_url')]"
@@ -137,6 +189,15 @@
 					"LS_SQLSERVER_PARQUET_ADLS_properties_typeProperties_url": {
 						"value": "[parameters('LS_SQLSERVER_PARQUET_ADLS_properties_typeProperties_url')]"
 					},
+					"LS_SqlServer1_properties_typeProperties_server": {
+						"value": "[parameters('LS_SqlServer1_properties_typeProperties_server')]"
+					},
+					"LS_SqlServer1_properties_typeProperties_database": {
+						"value": "[parameters('LS_SqlServer1_properties_typeProperties_database')]"
+					},
+					"LS_SqlServer1_properties_typeProperties_userName": {
+						"value": "[parameters('LS_SqlServer1_properties_typeProperties_userName')]"
+					},
 					"LS_SqlServerTable1_properties_typeProperties_server": {
 						"value": "[parameters('LS_SqlServerTable1_properties_typeProperties_server')]"
 					},
@@ -145,10 +206,39 @@
 					},
 					"LS_SqlServerTable1_properties_typeProperties_userName": {
 						"value": "[parameters('LS_SqlServerTable1_properties_typeProperties_userName')]"
+					},
+					"SqlServer1_properties_typeProperties_server": {
+						"value": "[parameters('SqlServer1_properties_typeProperties_server')]"
+					},
+					"SqlServer1_properties_typeProperties_database": {
+						"value": "[parameters('SqlServer1_properties_typeProperties_database')]"
+					},
+					"SqlServer1_properties_typeProperties_userName": {
+						"value": "[parameters('SqlServer1_properties_typeProperties_userName')]"
 					}
 				}
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "adf-ritika-dev_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adf-ritika-dev_ArmTemplate_0')]"
+			]
 		}
 	]
 }

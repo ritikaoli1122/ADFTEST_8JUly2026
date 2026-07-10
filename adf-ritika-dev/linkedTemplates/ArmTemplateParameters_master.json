@@ -11,6 +11,9 @@
 		"AzureDataLakeStorage1_accountKey": {
 			"value": ""
 		},
+		"LS_ADLS_CSV_BLOB_accountKey": {
+			"value": ""
+		},
 		"LS_REST_ADLS_Parquet_accountKey": {
 			"value": ""
 		},
@@ -20,10 +23,19 @@
 		"LS_SQLSERVER_PARQUET_ADLS_accountKey": {
 			"value": ""
 		},
+		"LS_SqlServer1_password": {
+			"value": ""
+		},
 		"LS_SqlServerTable1_password": {
 			"value": ""
 		},
+		"SqlServer1_password": {
+			"value": ""
+		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://adlsritikaoli.dfs.core.windows.net/"
+		},
+		"LS_ADLS_CSV_BLOB_properties_typeProperties_url": {
 			"value": "https://adlsritikaoli.dfs.core.windows.net/"
 		},
 		"LS_REST_ADLS_Parquet_properties_typeProperties_url": {
@@ -44,6 +56,15 @@
 		"LS_SQLSERVER_PARQUET_ADLS_properties_typeProperties_url": {
 			"value": "https://adlsritikaoli.dfs.core.windows.net/"
 		},
+		"LS_SqlServer1_properties_typeProperties_server": {
+			"value": "localhost\\SQLEXPRESS"
+		},
+		"LS_SqlServer1_properties_typeProperties_database": {
+			"value": "AdventureWorks2022"
+		},
+		"LS_SqlServer1_properties_typeProperties_userName": {
+			"value": "ritika"
+		},
 		"LS_SqlServerTable1_properties_typeProperties_server": {
 			"value": "localhost\\SQLEXPRESS"
 		},
@@ -51,6 +72,15 @@
 			"value": "AdventureWorks2022"
 		},
 		"LS_SqlServerTable1_properties_typeProperties_userName": {
+			"value": "ritika"
+		},
+		"SqlServer1_properties_typeProperties_server": {
+			"value": "localhost\\SQLEXPRESS"
+		},
+		"SqlServer1_properties_typeProperties_database": {
+			"value": "AdventureWorks2022"
+		},
+		"SqlServer1_properties_typeProperties_userName": {
 			"value": "ritika"
 		},
 		"containerUri": {
