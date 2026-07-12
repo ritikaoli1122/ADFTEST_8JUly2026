@@ -15,9 +15,21 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
 		},
+		"AzureDataLakeStorage2_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage2'"
+		},
+		"LS_ADLS_CSV_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_ADLS_CSV'"
+		},
 		"LS_ADLS_CSV_BLOB_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_ADLS_CSV_BLOB'"
+		},
+		"LS_ADLS_TEXT_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_ADLS_TEXT'"
 		},
 		"LS_REST_ADLS_Parquet_accountKey": {
 			"type": "secureString",
@@ -47,7 +59,19 @@
 			"type": "string",
 			"defaultValue": "https://adlsritikaoli.dfs.core.windows.net/"
 		},
+		"AzureDataLakeStorage2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsritikaoli.dfs.core.windows.net/"
+		},
+		"LS_ADLS_CSV_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsritikaoli.dfs.core.windows.net/"
+		},
 		"LS_ADLS_CSV_BLOB_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsritikaoli.dfs.core.windows.net/"
+		},
+		"LS_ADLS_TEXT_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsritikaoli.dfs.core.windows.net/"
 		},
@@ -144,8 +168,17 @@
 					"AzureDataLakeStorage1_accountKey": {
 						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
 					},
+					"AzureDataLakeStorage2_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage2_accountKey')]"
+					},
+					"LS_ADLS_CSV_accountKey": {
+						"value": "[parameters('LS_ADLS_CSV_accountKey')]"
+					},
 					"LS_ADLS_CSV_BLOB_accountKey": {
 						"value": "[parameters('LS_ADLS_CSV_BLOB_accountKey')]"
+					},
+					"LS_ADLS_TEXT_accountKey": {
+						"value": "[parameters('LS_ADLS_TEXT_accountKey')]"
 					},
 					"LS_REST_ADLS_Parquet_accountKey": {
 						"value": "[parameters('LS_REST_ADLS_Parquet_accountKey')]"
@@ -162,14 +195,20 @@
 					"LS_SqlServerTable1_password": {
 						"value": "[parameters('LS_SqlServerTable1_password')]"
 					},
-					"SqlServer1_password": {
-						"value": "[parameters('SqlServer1_password')]"
-					},
 					"AzureDataLakeStorage1_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
 					},
+					"AzureDataLakeStorage2_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage2_properties_typeProperties_url')]"
+					},
+					"LS_ADLS_CSV_properties_typeProperties_url": {
+						"value": "[parameters('LS_ADLS_CSV_properties_typeProperties_url')]"
+					},
 					"LS_ADLS_CSV_BLOB_properties_typeProperties_url": {
 						"value": "[parameters('LS_ADLS_CSV_BLOB_properties_typeProperties_url')]"
+					},
+					"LS_ADLS_TEXT_properties_typeProperties_url": {
+						"value": "[parameters('LS_ADLS_TEXT_properties_typeProperties_url')]"
 					},
 					"LS_REST_ADLS_Parquet_properties_typeProperties_url": {
 						"value": "[parameters('LS_REST_ADLS_Parquet_properties_typeProperties_url')]"
@@ -206,15 +245,6 @@
 					},
 					"LS_SqlServerTable1_properties_typeProperties_userName": {
 						"value": "[parameters('LS_SqlServerTable1_properties_typeProperties_userName')]"
-					},
-					"SqlServer1_properties_typeProperties_server": {
-						"value": "[parameters('SqlServer1_properties_typeProperties_server')]"
-					},
-					"SqlServer1_properties_typeProperties_database": {
-						"value": "[parameters('SqlServer1_properties_typeProperties_database')]"
-					},
-					"SqlServer1_properties_typeProperties_userName": {
-						"value": "[parameters('SqlServer1_properties_typeProperties_userName')]"
 					}
 				}
 			},
@@ -233,6 +263,18 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"SqlServer1_password": {
+						"value": "[parameters('SqlServer1_password')]"
+					},
+					"SqlServer1_properties_typeProperties_server": {
+						"value": "[parameters('SqlServer1_properties_typeProperties_server')]"
+					},
+					"SqlServer1_properties_typeProperties_database": {
+						"value": "[parameters('SqlServer1_properties_typeProperties_database')]"
+					},
+					"SqlServer1_properties_typeProperties_userName": {
+						"value": "[parameters('SqlServer1_properties_typeProperties_userName')]"
 					}
 				}
 			},
