@@ -50,7 +50,8 @@
 						"referenceName": "DS_Event_Trigger",
 						"type": "DatasetReference",
 						"parameters": {
-							"FolderPath": "@pipeline().parameters.TriggeredFolderPath"
+							"FolderPath": "@pipeline().parameters.TriggeredFolderPath",
+							"FileName": "@pipeline().parameters.TriggeredFileName"
 						}
 					}
 				],
