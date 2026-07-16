@@ -960,7 +960,7 @@
 				],
 				"type": "BlobEventsTrigger",
 				"typeProperties": {
-					"blobPathBeginsWith": "/inputeventtriggerstorage/blobs/eventtriggerstorage",
+					"blobPathBeginsWith": "/inputeventtriggerstorage/blobs/inputeventtriggerstorage",
 					"ignoreEmptyBlobs": true,
 					"scope": "[parameters('Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_typeProperties_scope')]",
 					"events": [
