@@ -79,6 +79,14 @@
 			"type": "string",
 			"defaultValue": "ritika"
 		},
+		"Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_PL_BLOB_EVENT_Data_parameters_TriggeredFolderPath": {
+			"type": "string",
+			"defaultValue": "@triggerBody().folderPath"
+		},
+		"Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_PL_BLOB_EVENT_Data_parameters_TriggeredFileName": {
+			"type": "string",
+			"defaultValue": "@triggerBody().fileName"
+		},
 		"Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_typeProperties_scope": {
 			"type": "string",
 			"defaultValue": "/subscriptions/121ff561-c007-4ac2-a95a-15f57918f90c/resourceGroups/rg-Ritika-dev/providers/Microsoft.Storage/storageAccounts/adlsritikaoli"
@@ -237,7 +245,6 @@
 								"storeSettings": {
 									"type": "AzureBlobFSReadSettings",
 									"recursive": true,
-									"wildcardFileName": "*",
 									"enablePartitionDiscovery": false
 								},
 								"formatSettings": {
@@ -267,7 +274,10 @@
 							{
 								"referenceName": "DS_Event_Trigger",
 								"type": "DatasetReference",
-								"parameters": {}
+								"parameters": {
+									"FolderPath": "@pipeline().parameters.TriggeredFolderPath",
+									"FileName": "@pipeline().parameters.TriggeredFileName"
+								}
 							}
 						],
 						"outputs": [
@@ -281,6 +291,14 @@
 				],
 				"policy": {
 					"elapsedTimeMetric": {}
+				},
+				"parameters": {
+					"TriggeredFolderPath": {
+						"type": "string"
+					},
+					"TriggeredFileName": {
+						"type": "string"
+					}
 				},
 				"annotations": []
 			},
@@ -955,12 +973,15 @@
 							"referenceName": "PL_BLOB_EVENT_Data",
 							"type": "PipelineReference"
 						},
-						"parameters": {}
+						"parameters": {
+							"TriggeredFolderPath": "[parameters('Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_PL_BLOB_EVENT_Data_parameters_TriggeredFolderPath')]",
+							"TriggeredFileName": "[parameters('Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_PL_BLOB_EVENT_Data_parameters_TriggeredFileName')]"
+						}
 					}
 				],
 				"type": "BlobEventsTrigger",
 				"typeProperties": {
-					"blobPathBeginsWith": "/inputeventtriggerstorage/blobs/inputeventtriggerstorage",
+					"blobPathBeginsWith": "/inputeventtriggerstorage/blobs/",
 					"ignoreEmptyBlobs": true,
 					"scope": "[parameters('Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_typeProperties_scope')]",
 					"events": [

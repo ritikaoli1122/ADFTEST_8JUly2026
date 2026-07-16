@@ -113,6 +113,12 @@
 		"SqlServer1_properties_typeProperties_userName": {
 			"value": "ritika"
 		},
+		"Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_PL_BLOB_EVENT_Data_parameters_TriggeredFolderPath": {
+			"value": "@triggerBody().folderPath"
+		},
+		"Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_PL_BLOB_EVENT_Data_parameters_TriggeredFileName": {
+			"value": "@triggerBody().fileName"
+		},
 		"Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_typeProperties_scope": {
 			"value": "/subscriptions/121ff561-c007-4ac2-a95a-15f57918f90c/resourceGroups/rg-Ritika-dev/providers/Microsoft.Storage/storageAccounts/adlsritikaoli"
 		},
