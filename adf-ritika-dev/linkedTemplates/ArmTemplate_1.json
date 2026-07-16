@@ -7,9 +7,65 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "adf-ritika-dev"
 		},
+		"LS_SQLSERVER_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_SQLSERVER'"
+		},
+		"LS_SQLSERVER_PARQUET_ADLS_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_SQLSERVER_PARQUET_ADLS'"
+		},
+		"LS_SqlServer1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_SqlServer1'"
+		},
+		"LS_SqlServerTable1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_SqlServerTable1'"
+		},
 		"SqlServer1_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'SqlServer1'"
+		},
+		"LS_SQLSERVER_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "localhost\\SQLEXPRESS"
+		},
+		"LS_SQLSERVER_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "Visionboard"
+		},
+		"LS_SQLSERVER_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "ritika"
+		},
+		"LS_SQLSERVER_PARQUET_ADLS_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsritikaoli.dfs.core.windows.net/"
+		},
+		"LS_SqlServer1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "localhost\\SQLEXPRESS"
+		},
+		"LS_SqlServer1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "AdventureWorks2022"
+		},
+		"LS_SqlServer1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "ritika"
+		},
+		"LS_SqlServerTable1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "localhost\\SQLEXPRESS"
+		},
+		"LS_SqlServerTable1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "AdventureWorks2022"
+		},
+		"LS_SqlServerTable1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "ritika"
 		},
 		"SqlServer1_properties_typeProperties_server": {
 			"type": "string",
@@ -22,12 +78,115 @@
 		"SqlServer1_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "ritika"
+		},
+		"Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/121ff561-c007-4ac2-a95a-15f57918f90c/resourceGroups/rg-Ritika-dev/providers/Microsoft.Storage/storageAccounts/adlsritikaoli"
 		}
 	},
 	"variables": {
 		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
 	},
 	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_SQLSERVER')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "SqlServer",
+				"typeProperties": {
+					"server": "[parameters('LS_SQLSERVER_properties_typeProperties_server')]",
+					"database": "[parameters('LS_SQLSERVER_properties_typeProperties_database')]",
+					"encrypt": "optional",
+					"trustServerCertificate": false,
+					"authenticationType": "SQL",
+					"userName": "[parameters('LS_SQLSERVER_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('LS_SQLSERVER_password')]"
+					}
+				},
+				"connectVia": {
+					"referenceName": "SHIRintegrationRuntime",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_SQLSERVER_PARQUET_ADLS')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('LS_SQLSERVER_PARQUET_ADLS_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('LS_SQLSERVER_PARQUET_ADLS_accountKey')]"
+					}
+				},
+				"connectVia": {
+					"referenceName": "SHIRintegrationRuntime",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_SqlServer1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "SqlServer",
+				"typeProperties": {
+					"server": "[parameters('LS_SqlServer1_properties_typeProperties_server')]",
+					"database": "[parameters('LS_SqlServer1_properties_typeProperties_database')]",
+					"encrypt": "optional",
+					"trustServerCertificate": false,
+					"authenticationType": "SQL",
+					"userName": "[parameters('LS_SqlServer1_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('LS_SqlServer1_password')]"
+					}
+				},
+				"connectVia": {
+					"referenceName": "SHIRintegrationRuntime",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_SqlServerTable1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "SqlServer",
+				"typeProperties": {
+					"server": "[parameters('LS_SqlServerTable1_properties_typeProperties_server')]",
+					"database": "[parameters('LS_SqlServerTable1_properties_typeProperties_database')]",
+					"encrypt": "optional",
+					"trustServerCertificate": false,
+					"authenticationType": "SQL",
+					"userName": "[parameters('LS_SqlServerTable1_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('LS_SqlServerTable1_password')]"
+					}
+				},
+				"connectVia": {
+					"referenceName": "SHIRintegrationRuntime",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": []
+		},
 		{
 			"name": "[concat(parameters('factoryName'), '/SqlServer1')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
@@ -51,6 +210,79 @@
 					"referenceName": "SHIRintegrationRuntime",
 					"type": "IntegrationRuntimeReference"
 				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/PL_BLOB_EVENT_Data')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Copy data1",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "DelimitedTextSource",
+								"storeSettings": {
+									"type": "AzureBlobFSReadSettings",
+									"recursive": true,
+									"wildcardFileName": "*",
+									"enablePartitionDiscovery": false
+								},
+								"formatSettings": {
+									"type": "DelimitedTextReadSettings"
+								}
+							},
+							"sink": {
+								"type": "ParquetSink",
+								"storeSettings": {
+									"type": "AzureBlobFSWriteSettings"
+								},
+								"formatSettings": {
+									"type": "ParquetWriteSettings"
+								}
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "DS_Event_Trigger",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "DS_Event_Trigger_ADLS_Parquet",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {}
+				},
+				"annotations": []
 			},
 			"dependsOn": []
 		},
@@ -591,7 +823,9 @@
 				"annotations": [],
 				"lastPublishTime": "2026-07-09T07:55:12Z"
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/LS_SQLSERVER')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/DS_SQLSERVER_PARQUET_ADLS')]",
@@ -613,7 +847,9 @@
 				},
 				"schema": []
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/LS_SQLSERVER_PARQUET_ADLS')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/DS_SqlServerTable1')]",
@@ -632,7 +868,9 @@
 					"table": "Department"
 				}
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/LS_SqlServerTable1')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/PL_SQLSERVER_ADLS')]",
@@ -702,6 +940,36 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/DS_SqlServerTable1')]",
 				"[concat(variables('factoryId'), '/datasets/DS_SQLSERVER_PARQUET_ADLS')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Event_Trigger_Blobdata_ADLS_CSV_Parquet')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Stopped",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "PL_BLOB_EVENT_Data",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					}
+				],
+				"type": "BlobEventsTrigger",
+				"typeProperties": {
+					"blobPathBeginsWith": "/inputeventtriggerstorage/blobs/eventtriggerstorage",
+					"ignoreEmptyBlobs": true,
+					"scope": "[parameters('Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_typeProperties_scope')]",
+					"events": [
+						"Microsoft.Storage.BlobCreated"
+					]
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/PL_BLOB_EVENT_Data')]"
 			]
 		},
 		{
