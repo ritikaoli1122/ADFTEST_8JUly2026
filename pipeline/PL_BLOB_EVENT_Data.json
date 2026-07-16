@@ -49,7 +49,10 @@
 				"inputs": [
 					{
 						"referenceName": "DS_Event_Trigger",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"FolderPath": "@pipeline().parameters.TriggeredFolderPath"
+						}
 					}
 				],
 				"outputs": [
@@ -60,6 +63,14 @@
 				]
 			}
 		],
+		"parameters": {
+			"TriggeredFolderPath": {
+				"type": "string"
+			},
+			"TriggeredFileName": {
+				"type": "string"
+			}
+		},
 		"annotations": []
 	}
 }

@@ -8,6 +8,10 @@
 				"pipelineReference": {
 					"referenceName": "PL_BLOB_EVENT_Data",
 					"type": "PipelineReference"
+				},
+				"parameters": {
+					"TriggeredFolderPath": "@triggerBody().folderPath",
+					"TriggeredFileName": "@triggerBody().fileName"
 				}
 			}
 		],
