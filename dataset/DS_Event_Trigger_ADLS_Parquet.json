@@ -1,0 +1,19 @@
+{
+	"name": "DS_Event_Trigger_ADLS_Parquet",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Event_Trigger_ADLS_Parquet",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "oututeventtriggerstorage"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
