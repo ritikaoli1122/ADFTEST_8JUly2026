@@ -13,7 +13,7 @@
 		],
 		"type": "BlobEventsTrigger",
 		"typeProperties": {
-			"blobPathBeginsWith": "/inputeventtriggerstorage/blobs/eventtriggerstorage",
+			"blobPathBeginsWith": "/inputeventtriggerstorage/blobs/inputeventtriggerstorage",
 			"ignoreEmptyBlobs": true,
 			"scope": "/subscriptions/121ff561-c007-4ac2-a95a-15f57918f90c/resourceGroups/rg-Ritika-dev/providers/Microsoft.Storage/storageAccounts/adlsritikaoli",
 			"events": [
