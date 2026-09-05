@@ -12,7 +12,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"variableName": "Trigger_Variable",
+					"variableName": "trigger_variable",
 					"value": {
 						"value": "@if(equals(pipeline().parameters.Trigger,null), pipeline().TriggerName, pipeline().parameters.Trigger)",
 						"type": "Expression"
