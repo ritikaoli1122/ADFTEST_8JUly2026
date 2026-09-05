@@ -383,7 +383,7 @@
 							"source": {
 								"type": "AzureSqlSource",
 								"sqlReaderQuery": {
-									"value": "SELECT DISTINCT L2_switch_type \nFROM dbo.vb_tbl_job a\nJOIN dbo.vb_tbl_trigger b \nON a.trigger_id = b.trigger_id\nWHERE b.TriggerName = '@{pipeline().parameters.Trigger}'",
+									"value": "SELECT DISTINCT L2_switch_type \nFROM dbo.vb_tbl_job a\nJOIN dbo.vb_tbl_trigger b \nON a.trigger_id = b.trigger_id\nWHERE b.Trigger_Name = '@{pipeline().parameters.Trigger}'",
 									"type": "Expression"
 								},
 								"queryTimeout": "02:00:00",
@@ -442,7 +442,7 @@
 									]
 								},
 								{
-									"value": "restapi",
+									"value": "API",
 									"activities": [
 										{
 											"name": "Wait1",
@@ -516,7 +516,7 @@
 							"source": {
 								"type": "AzureSqlSource",
 								"sqlReaderQuery": {
-									"value": "SELECT DISTINCT L3_switch_type \nFROM dbo.vb_tbl_job a\nJOIN dbo.vb_tbl_trigger b \nON a.trigger_id = b.trigger_id\nWHERE b.TriggerName = '@{pipeline().parameters.Trigger}'",
+									"value": "SELECT DISTINCT L3_switch_type \nFROM dbo.vb_tbl_job a\nJOIN dbo.vb_tbl_trigger b \nON a.trigger_id = b.trigger_id\nWHERE b.Trigger_Name = '@{pipeline().parameters.Trigger}'",
 									"type": "Expression"
 								},
 								"queryTimeout": "02:00:00",
@@ -560,7 +560,7 @@
 											"userProperties": [],
 											"typeProperties": {
 												"pipeline": {
-													"referenceName": "PL_CSV",
+													"referenceName": "PL4_SWITCH_CSV_EXCEL",
 													"type": "PipelineReference"
 												},
 												"waitOnCompletion": true,
@@ -606,7 +606,8 @@
 				},
 				"parameters": {
 					"Trigger": {
-						"type": "string"
+						"type": "string",
+						"defaultValue": "@pipeline().parameters.Trigger"
 					}
 				},
 				"annotations": [],
@@ -614,7 +615,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/DS_AZSQL_SRCDB')]",
-				"[concat(variables('factoryId'), '/pipelines/PL_CSV')]"
+				"[concat(variables('factoryId'), '/pipelines/PL4_SWITCH_CSV_EXCEL')]"
 			]
 		},
 		{
@@ -639,7 +640,7 @@
 							"source": {
 								"type": "AzureSqlSource",
 								"sqlReaderQuery": {
-									"value": "SELECT DISTINCT L4_switch_type \nFROM dbo.vb_tbl_job a\nJOIN dbo.vb_tbl_trigger b \nON a.trigger_id = b.trigger_id\nWHERE b.TriggerName = '@{pipeline().parameters.Trigger}'",
+									"value": "SELECT DISTINCT L4_switch_type \nFROM dbo.vb_tbl_job a\nJOIN dbo.vb_tbl_trigger b \nON a.trigger_id = b.trigger_id\nWHERE b.Trigger_Name = '@{pipeline().parameters.Trigger}'",
 									"type": "Expression"
 								},
 								"queryTimeout": "02:00:00",
@@ -720,7 +721,8 @@
 				},
 				"parameters": {
 					"Trigger": {
-						"type": "string"
+						"type": "string",
+						"defaultValue": "@pipeline().parameters.Trigger"
 					}
 				},
 				"annotations": [],
@@ -888,7 +890,8 @@
 				},
 				"parameters": {
 					"Trigger": {
-						"type": "string"
+						"type": "string",
+						"defaultValue": "@pipeline().parameters.Trigger"
 					}
 				},
 				"variables": {
@@ -1918,6 +1921,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
+						"folderPath": "csv",
 						"fileSystem": "input"
 					},
 					"compressionCodec": "snappy"

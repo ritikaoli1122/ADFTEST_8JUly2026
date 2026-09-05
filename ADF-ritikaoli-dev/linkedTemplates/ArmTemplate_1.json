@@ -223,6 +223,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
+						"folderPath": "csv",
 						"fileSystem": "input"
 					},
 					"compressionCodec": "snappy"
