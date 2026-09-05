@@ -1,0 +1,585 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "ADF-ritikaoli-dev"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
+		},
+		"AzureDataLakeStorage2_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage2'"
+		},
+		"Event_Trigger_ADLS_Parquet_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'Event_Trigger_ADLS_Parquet'"
+		},
+		"LS_ADLS_CSV_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_ADLS_CSV'"
+		},
+		"LS_ADLS_CSV_BLOB_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_ADLS_CSV_BLOB'"
+		},
+		"LS_ADLS_TEXT_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_ADLS_TEXT'"
+		},
+		"LS_AZSQL_CSV_EXCEL_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_AZSQL_CSV_EXCEL'"
+		},
+		"LS_AZSQL_DB_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_AZSQL_DB'"
+		},
+		"LS_AZSQL_SRCDB_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_AZSQL_SRCDB'"
+		},
+		"LS_CSV_ADLS_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_CSV_ADLS'"
+		},
+		"LS_CSV_ADLS1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_CSV_ADLS1'"
+		},
+		"LS_CSV_PARQUET_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_CSV_PARQUET'"
+		},
+		"LS_Event_Trigger_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_Event_Trigger'"
+		},
+		"LS_REST_ADLS_Parquet_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_REST_ADLS_Parquet'"
+		},
+		"LS_SFTP_Parquet_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_SFTP_Parquet'"
+		},
+		"LS_SFTP_Sink_Paequet_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_SFTP_Sink_Paequet'"
+		},
+		"LS_SQLSERVER_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_SQLSERVER'"
+		},
+		"LS_SQLSERVER_PARQUET_ADLS_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_SQLSERVER_PARQUET_ADLS'"
+		},
+		"LS_SQL_ADLS_Parquet_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_SQL_ADLS_Parquet'"
+		},
+		"LS_SQL_ADLS_parquet_sink_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_SQL_ADLS_parquet_sink'"
+		},
+		"LS_SnowFlake_ADLS_Parquet_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_SnowFlake_ADLS_Parquet'"
+		},
+		"LS_SqlServer1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_SqlServer1'"
+		},
+		"LS_SqlServerTable1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_SqlServerTable1'"
+		},
+		"SqlServer1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'SqlServer1'"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsritikaoli.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsritikaoli.dfs.core.windows.net/"
+		},
+		"Event_Trigger_ADLS_Parquet_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsritikaoli.dfs.core.windows.net/"
+		},
+		"LS_ADLS_CSV_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsritikaoli.dfs.core.windows.net/"
+		},
+		"LS_ADLS_CSV_BLOB_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsritikaoli.dfs.core.windows.net/"
+		},
+		"LS_ADLS_TEXT_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsritikaoli.dfs.core.windows.net/"
+		},
+		"LS_AZSQL_CSV_EXCEL_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "sql-server-ritika-dev.database.windows.net"
+		},
+		"LS_AZSQL_CSV_EXCEL_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "sql-db-vb-dev"
+		},
+		"LS_AZSQL_CSV_EXCEL_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "ritika"
+		},
+		"LS_AZSQL_DB_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "sql-server-ritika-dev.database.windows.net"
+		},
+		"LS_AZSQL_DB_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "sql-db-vb-dev"
+		},
+		"LS_AZSQL_DB_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "ritika"
+		},
+		"LS_AZSQL_SRCDB_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "sql-server-ritika-dev.database.windows.net"
+		},
+		"LS_AZSQL_SRCDB_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "sql-db-vb-dev"
+		},
+		"LS_AZSQL_SRCDB_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "ritika"
+		},
+		"LS_CSV_ADLS_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://blobritika.dfs.core.windows.net/"
+		},
+		"LS_CSV_PARQUET_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsritikaraw01.dfs.core.windows.net/"
+		},
+		"LS_Event_Trigger_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsritikaoli.dfs.core.windows.net/"
+		},
+		"LS_REST_ADLS_Parquet_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsritikaoli.dfs.core.windows.net/"
+		},
+		"LS_RestResource_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://retoolapi.dev/5yDVOt/data"
+		},
+		"LS_SFTP_Parquet_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsritikaraw01.dfs.core.windows.net/"
+		},
+		"LS_SFTP_Sink_Paequet_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsritikaraw01.dfs.core.windows.net/"
+		},
+		"LS_SQLSERVER_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "localhost\\SQLEXPRESS"
+		},
+		"LS_SQLSERVER_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "Visionboard"
+		},
+		"LS_SQLSERVER_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "ritika"
+		},
+		"LS_SQLSERVER_PARQUET_ADLS_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsritikaoli.dfs.core.windows.net/"
+		},
+		"LS_SQL_ADLS_Parquet_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "localhost\\SQLEXPRESS"
+		},
+		"LS_SQL_ADLS_Parquet_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "vbadeproject"
+		},
+		"LS_SQL_ADLS_Parquet_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "ritika"
+		},
+		"LS_SQL_ADLS_parquet_sink_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsritikaraw01.dfs.core.windows.net/"
+		},
+		"LS_SnowFlake_ADLS_Parquet_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "DBAZURESNOW"
+		},
+		"LS_SnowFlake_parquet_sasUri": {
+			"type": "secureString",
+			"metadata": "Secure string for 'sasUri' of 'LS_SnowFlake_parquet'"
+		},
+		"LS_SqlServer1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "localhost\\SQLEXPRESS"
+		},
+		"LS_SqlServer1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "AdventureWorks2022"
+		},
+		"LS_SqlServer1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "ritika"
+		},
+		"LS_SqlServerTable1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "localhost\\SQLEXPRESS"
+		},
+		"LS_SqlServerTable1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "AdventureWorks2022"
+		},
+		"LS_SqlServerTable1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "ritika"
+		},
+		"SqlServer1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "localhost\\SQLEXPRESS"
+		},
+		"SqlServer1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "AdventureWorks2022"
+		},
+		"SqlServer1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "ritika"
+		},
+		"Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_PL_BLOB_EVENT_Data_parameters_TriggeredFolderPath": {
+			"type": "string",
+			"defaultValue": "@triggerBody().folderPath"
+		},
+		"Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_PL_BLOB_EVENT_Data_parameters_TriggeredFileName": {
+			"type": "string",
+			"defaultValue": "@triggerBody().fileName"
+		},
+		"Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/121ff561-c007-4ac2-a95a-15f57918f90c/resourceGroups/rg-Ritika-dev/providers/Microsoft.Storage/storageAccounts/adlsritikaoli"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "ADF-ritikaoli-dev_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureBlobStorage1_connectionString": {
+						"value": "[parameters('AzureBlobStorage1_connectionString')]"
+					},
+					"AzureDataLakeStorage1_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
+					},
+					"AzureDataLakeStorage2_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage2_accountKey')]"
+					},
+					"Event_Trigger_ADLS_Parquet_accountKey": {
+						"value": "[parameters('Event_Trigger_ADLS_Parquet_accountKey')]"
+					},
+					"LS_ADLS_CSV_accountKey": {
+						"value": "[parameters('LS_ADLS_CSV_accountKey')]"
+					},
+					"LS_ADLS_CSV_BLOB_accountKey": {
+						"value": "[parameters('LS_ADLS_CSV_BLOB_accountKey')]"
+					},
+					"LS_ADLS_TEXT_accountKey": {
+						"value": "[parameters('LS_ADLS_TEXT_accountKey')]"
+					},
+					"LS_AZSQL_CSV_EXCEL_password": {
+						"value": "[parameters('LS_AZSQL_CSV_EXCEL_password')]"
+					},
+					"LS_AZSQL_DB_password": {
+						"value": "[parameters('LS_AZSQL_DB_password')]"
+					},
+					"LS_AZSQL_SRCDB_password": {
+						"value": "[parameters('LS_AZSQL_SRCDB_password')]"
+					},
+					"LS_CSV_ADLS_accountKey": {
+						"value": "[parameters('LS_CSV_ADLS_accountKey')]"
+					},
+					"LS_CSV_ADLS1_connectionString": {
+						"value": "[parameters('LS_CSV_ADLS1_connectionString')]"
+					},
+					"LS_CSV_PARQUET_accountKey": {
+						"value": "[parameters('LS_CSV_PARQUET_accountKey')]"
+					},
+					"LS_Event_Trigger_accountKey": {
+						"value": "[parameters('LS_Event_Trigger_accountKey')]"
+					},
+					"LS_REST_ADLS_Parquet_accountKey": {
+						"value": "[parameters('LS_REST_ADLS_Parquet_accountKey')]"
+					},
+					"LS_SFTP_Parquet_accountKey": {
+						"value": "[parameters('LS_SFTP_Parquet_accountKey')]"
+					},
+					"LS_SFTP_Sink_Paequet_accountKey": {
+						"value": "[parameters('LS_SFTP_Sink_Paequet_accountKey')]"
+					},
+					"LS_SQL_ADLS_parquet_sink_accountKey": {
+						"value": "[parameters('LS_SQL_ADLS_parquet_sink_accountKey')]"
+					},
+					"AzureDataLakeStorage1_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
+					},
+					"AzureDataLakeStorage2_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage2_properties_typeProperties_url')]"
+					},
+					"Event_Trigger_ADLS_Parquet_properties_typeProperties_url": {
+						"value": "[parameters('Event_Trigger_ADLS_Parquet_properties_typeProperties_url')]"
+					},
+					"LS_ADLS_CSV_properties_typeProperties_url": {
+						"value": "[parameters('LS_ADLS_CSV_properties_typeProperties_url')]"
+					},
+					"LS_ADLS_CSV_BLOB_properties_typeProperties_url": {
+						"value": "[parameters('LS_ADLS_CSV_BLOB_properties_typeProperties_url')]"
+					},
+					"LS_ADLS_TEXT_properties_typeProperties_url": {
+						"value": "[parameters('LS_ADLS_TEXT_properties_typeProperties_url')]"
+					},
+					"LS_AZSQL_CSV_EXCEL_properties_typeProperties_server": {
+						"value": "[parameters('LS_AZSQL_CSV_EXCEL_properties_typeProperties_server')]"
+					},
+					"LS_AZSQL_CSV_EXCEL_properties_typeProperties_database": {
+						"value": "[parameters('LS_AZSQL_CSV_EXCEL_properties_typeProperties_database')]"
+					},
+					"LS_AZSQL_CSV_EXCEL_properties_typeProperties_userName": {
+						"value": "[parameters('LS_AZSQL_CSV_EXCEL_properties_typeProperties_userName')]"
+					},
+					"LS_AZSQL_DB_properties_typeProperties_server": {
+						"value": "[parameters('LS_AZSQL_DB_properties_typeProperties_server')]"
+					},
+					"LS_AZSQL_DB_properties_typeProperties_database": {
+						"value": "[parameters('LS_AZSQL_DB_properties_typeProperties_database')]"
+					},
+					"LS_AZSQL_DB_properties_typeProperties_userName": {
+						"value": "[parameters('LS_AZSQL_DB_properties_typeProperties_userName')]"
+					},
+					"LS_AZSQL_SRCDB_properties_typeProperties_server": {
+						"value": "[parameters('LS_AZSQL_SRCDB_properties_typeProperties_server')]"
+					},
+					"LS_AZSQL_SRCDB_properties_typeProperties_database": {
+						"value": "[parameters('LS_AZSQL_SRCDB_properties_typeProperties_database')]"
+					},
+					"LS_AZSQL_SRCDB_properties_typeProperties_userName": {
+						"value": "[parameters('LS_AZSQL_SRCDB_properties_typeProperties_userName')]"
+					},
+					"LS_CSV_ADLS_properties_typeProperties_url": {
+						"value": "[parameters('LS_CSV_ADLS_properties_typeProperties_url')]"
+					},
+					"LS_CSV_PARQUET_properties_typeProperties_url": {
+						"value": "[parameters('LS_CSV_PARQUET_properties_typeProperties_url')]"
+					},
+					"LS_Event_Trigger_properties_typeProperties_url": {
+						"value": "[parameters('LS_Event_Trigger_properties_typeProperties_url')]"
+					},
+					"LS_REST_ADLS_Parquet_properties_typeProperties_url": {
+						"value": "[parameters('LS_REST_ADLS_Parquet_properties_typeProperties_url')]"
+					},
+					"LS_RestResource_properties_typeProperties_url": {
+						"value": "[parameters('LS_RestResource_properties_typeProperties_url')]"
+					},
+					"LS_SFTP_Parquet_properties_typeProperties_url": {
+						"value": "[parameters('LS_SFTP_Parquet_properties_typeProperties_url')]"
+					},
+					"LS_SFTP_Sink_Paequet_properties_typeProperties_url": {
+						"value": "[parameters('LS_SFTP_Sink_Paequet_properties_typeProperties_url')]"
+					},
+					"LS_SQL_ADLS_parquet_sink_properties_typeProperties_url": {
+						"value": "[parameters('LS_SQL_ADLS_parquet_sink_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "ADF-ritikaoli-dev_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"LS_SnowFlake_ADLS_Parquet_password": {
+						"value": "[parameters('LS_SnowFlake_ADLS_Parquet_password')]"
+					},
+					"LS_SnowFlake_ADLS_Parquet_properties_typeProperties_database": {
+						"value": "[parameters('LS_SnowFlake_ADLS_Parquet_properties_typeProperties_database')]"
+					},
+					"LS_SnowFlake_parquet_sasUri": {
+						"value": "[parameters('LS_SnowFlake_parquet_sasUri')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ADF-ritikaoli-dev_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "ADF-ritikaoli-dev_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"LS_SQLSERVER_password": {
+						"value": "[parameters('LS_SQLSERVER_password')]"
+					},
+					"LS_SQLSERVER_PARQUET_ADLS_accountKey": {
+						"value": "[parameters('LS_SQLSERVER_PARQUET_ADLS_accountKey')]"
+					},
+					"LS_SQL_ADLS_Parquet_password": {
+						"value": "[parameters('LS_SQL_ADLS_Parquet_password')]"
+					},
+					"LS_SqlServer1_password": {
+						"value": "[parameters('LS_SqlServer1_password')]"
+					},
+					"LS_SqlServerTable1_password": {
+						"value": "[parameters('LS_SqlServerTable1_password')]"
+					},
+					"SqlServer1_password": {
+						"value": "[parameters('SqlServer1_password')]"
+					},
+					"LS_SQLSERVER_properties_typeProperties_server": {
+						"value": "[parameters('LS_SQLSERVER_properties_typeProperties_server')]"
+					},
+					"LS_SQLSERVER_properties_typeProperties_database": {
+						"value": "[parameters('LS_SQLSERVER_properties_typeProperties_database')]"
+					},
+					"LS_SQLSERVER_properties_typeProperties_userName": {
+						"value": "[parameters('LS_SQLSERVER_properties_typeProperties_userName')]"
+					},
+					"LS_SQLSERVER_PARQUET_ADLS_properties_typeProperties_url": {
+						"value": "[parameters('LS_SQLSERVER_PARQUET_ADLS_properties_typeProperties_url')]"
+					},
+					"LS_SQL_ADLS_Parquet_properties_typeProperties_server": {
+						"value": "[parameters('LS_SQL_ADLS_Parquet_properties_typeProperties_server')]"
+					},
+					"LS_SQL_ADLS_Parquet_properties_typeProperties_database": {
+						"value": "[parameters('LS_SQL_ADLS_Parquet_properties_typeProperties_database')]"
+					},
+					"LS_SQL_ADLS_Parquet_properties_typeProperties_userName": {
+						"value": "[parameters('LS_SQL_ADLS_Parquet_properties_typeProperties_userName')]"
+					},
+					"LS_SqlServer1_properties_typeProperties_server": {
+						"value": "[parameters('LS_SqlServer1_properties_typeProperties_server')]"
+					},
+					"LS_SqlServer1_properties_typeProperties_database": {
+						"value": "[parameters('LS_SqlServer1_properties_typeProperties_database')]"
+					},
+					"LS_SqlServer1_properties_typeProperties_userName": {
+						"value": "[parameters('LS_SqlServer1_properties_typeProperties_userName')]"
+					},
+					"LS_SqlServerTable1_properties_typeProperties_server": {
+						"value": "[parameters('LS_SqlServerTable1_properties_typeProperties_server')]"
+					},
+					"LS_SqlServerTable1_properties_typeProperties_database": {
+						"value": "[parameters('LS_SqlServerTable1_properties_typeProperties_database')]"
+					},
+					"LS_SqlServerTable1_properties_typeProperties_userName": {
+						"value": "[parameters('LS_SqlServerTable1_properties_typeProperties_userName')]"
+					},
+					"SqlServer1_properties_typeProperties_server": {
+						"value": "[parameters('SqlServer1_properties_typeProperties_server')]"
+					},
+					"SqlServer1_properties_typeProperties_database": {
+						"value": "[parameters('SqlServer1_properties_typeProperties_database')]"
+					},
+					"SqlServer1_properties_typeProperties_userName": {
+						"value": "[parameters('SqlServer1_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ADF-ritikaoli-dev_ArmTemplate_1')]"
+			]
+		},
+		{
+			"name": "ADF-ritikaoli-dev_ArmTemplate_3",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_3.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_PL_BLOB_EVENT_Data_parameters_TriggeredFolderPath": {
+						"value": "[parameters('Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_PL_BLOB_EVENT_Data_parameters_TriggeredFolderPath')]"
+					},
+					"Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_PL_BLOB_EVENT_Data_parameters_TriggeredFileName": {
+						"value": "[parameters('Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_PL_BLOB_EVENT_Data_parameters_TriggeredFileName')]"
+					},
+					"Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_typeProperties_scope": {
+						"value": "[parameters('Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_typeProperties_scope')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ADF-ritikaoli-dev_ArmTemplate_2')]"
+			]
+		}
+	]
+}

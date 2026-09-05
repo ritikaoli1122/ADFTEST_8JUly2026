@@ -1,0 +1,222 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "ADF-ritikaoli-dev"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage2_accountKey": {
+			"value": ""
+		},
+		"Event_Trigger_ADLS_Parquet_accountKey": {
+			"value": ""
+		},
+		"LS_ADLS_CSV_accountKey": {
+			"value": ""
+		},
+		"LS_ADLS_CSV_BLOB_accountKey": {
+			"value": ""
+		},
+		"LS_ADLS_TEXT_accountKey": {
+			"value": ""
+		},
+		"LS_AZSQL_CSV_EXCEL_password": {
+			"value": ""
+		},
+		"LS_AZSQL_DB_password": {
+			"value": ""
+		},
+		"LS_AZSQL_SRCDB_password": {
+			"value": ""
+		},
+		"LS_CSV_ADLS_accountKey": {
+			"value": ""
+		},
+		"LS_CSV_ADLS1_connectionString": {
+			"value": ""
+		},
+		"LS_CSV_PARQUET_accountKey": {
+			"value": ""
+		},
+		"LS_Event_Trigger_accountKey": {
+			"value": ""
+		},
+		"LS_REST_ADLS_Parquet_accountKey": {
+			"value": ""
+		},
+		"LS_SFTP_Parquet_accountKey": {
+			"value": ""
+		},
+		"LS_SFTP_Sink_Paequet_accountKey": {
+			"value": ""
+		},
+		"LS_SQLSERVER_password": {
+			"value": ""
+		},
+		"LS_SQLSERVER_PARQUET_ADLS_accountKey": {
+			"value": ""
+		},
+		"LS_SQL_ADLS_Parquet_password": {
+			"value": ""
+		},
+		"LS_SQL_ADLS_parquet_sink_accountKey": {
+			"value": ""
+		},
+		"LS_SnowFlake_ADLS_Parquet_password": {
+			"value": ""
+		},
+		"LS_SqlServer1_password": {
+			"value": ""
+		},
+		"LS_SqlServerTable1_password": {
+			"value": ""
+		},
+		"SqlServer1_password": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://adlsritikaoli.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage2_properties_typeProperties_url": {
+			"value": "https://adlsritikaoli.dfs.core.windows.net/"
+		},
+		"Event_Trigger_ADLS_Parquet_properties_typeProperties_url": {
+			"value": "https://adlsritikaoli.dfs.core.windows.net/"
+		},
+		"LS_ADLS_CSV_properties_typeProperties_url": {
+			"value": "https://adlsritikaoli.dfs.core.windows.net/"
+		},
+		"LS_ADLS_CSV_BLOB_properties_typeProperties_url": {
+			"value": "https://adlsritikaoli.dfs.core.windows.net/"
+		},
+		"LS_ADLS_TEXT_properties_typeProperties_url": {
+			"value": "https://adlsritikaoli.dfs.core.windows.net/"
+		},
+		"LS_AZSQL_CSV_EXCEL_properties_typeProperties_server": {
+			"value": "sql-server-ritika-dev.database.windows.net"
+		},
+		"LS_AZSQL_CSV_EXCEL_properties_typeProperties_database": {
+			"value": "sql-db-vb-dev"
+		},
+		"LS_AZSQL_CSV_EXCEL_properties_typeProperties_userName": {
+			"value": "ritika"
+		},
+		"LS_AZSQL_DB_properties_typeProperties_server": {
+			"value": "sql-server-ritika-dev.database.windows.net"
+		},
+		"LS_AZSQL_DB_properties_typeProperties_database": {
+			"value": "sql-db-vb-dev"
+		},
+		"LS_AZSQL_DB_properties_typeProperties_userName": {
+			"value": "ritika"
+		},
+		"LS_AZSQL_SRCDB_properties_typeProperties_server": {
+			"value": "sql-server-ritika-dev.database.windows.net"
+		},
+		"LS_AZSQL_SRCDB_properties_typeProperties_database": {
+			"value": "sql-db-vb-dev"
+		},
+		"LS_AZSQL_SRCDB_properties_typeProperties_userName": {
+			"value": "ritika"
+		},
+		"LS_CSV_ADLS_properties_typeProperties_url": {
+			"value": "https://blobritika.dfs.core.windows.net/"
+		},
+		"LS_CSV_PARQUET_properties_typeProperties_url": {
+			"value": "https://adlsritikaraw01.dfs.core.windows.net/"
+		},
+		"LS_Event_Trigger_properties_typeProperties_url": {
+			"value": "https://adlsritikaoli.dfs.core.windows.net/"
+		},
+		"LS_REST_ADLS_Parquet_properties_typeProperties_url": {
+			"value": "https://adlsritikaoli.dfs.core.windows.net/"
+		},
+		"LS_RestResource_properties_typeProperties_url": {
+			"value": "https://retoolapi.dev/5yDVOt/data"
+		},
+		"LS_SFTP_Parquet_properties_typeProperties_url": {
+			"value": "https://adlsritikaraw01.dfs.core.windows.net/"
+		},
+		"LS_SFTP_Sink_Paequet_properties_typeProperties_url": {
+			"value": "https://adlsritikaraw01.dfs.core.windows.net/"
+		},
+		"LS_SQLSERVER_properties_typeProperties_server": {
+			"value": "localhost\\SQLEXPRESS"
+		},
+		"LS_SQLSERVER_properties_typeProperties_database": {
+			"value": "Visionboard"
+		},
+		"LS_SQLSERVER_properties_typeProperties_userName": {
+			"value": "ritika"
+		},
+		"LS_SQLSERVER_PARQUET_ADLS_properties_typeProperties_url": {
+			"value": "https://adlsritikaoli.dfs.core.windows.net/"
+		},
+		"LS_SQL_ADLS_Parquet_properties_typeProperties_server": {
+			"value": "localhost\\SQLEXPRESS"
+		},
+		"LS_SQL_ADLS_Parquet_properties_typeProperties_database": {
+			"value": "vbadeproject"
+		},
+		"LS_SQL_ADLS_Parquet_properties_typeProperties_userName": {
+			"value": "ritika"
+		},
+		"LS_SQL_ADLS_parquet_sink_properties_typeProperties_url": {
+			"value": "https://adlsritikaraw01.dfs.core.windows.net/"
+		},
+		"LS_SnowFlake_ADLS_Parquet_properties_typeProperties_database": {
+			"value": "DBAZURESNOW"
+		},
+		"LS_SnowFlake_parquet_sasUri": {
+			"value": ""
+		},
+		"LS_SqlServer1_properties_typeProperties_server": {
+			"value": "localhost\\SQLEXPRESS"
+		},
+		"LS_SqlServer1_properties_typeProperties_database": {
+			"value": "AdventureWorks2022"
+		},
+		"LS_SqlServer1_properties_typeProperties_userName": {
+			"value": "ritika"
+		},
+		"LS_SqlServerTable1_properties_typeProperties_server": {
+			"value": "localhost\\SQLEXPRESS"
+		},
+		"LS_SqlServerTable1_properties_typeProperties_database": {
+			"value": "AdventureWorks2022"
+		},
+		"LS_SqlServerTable1_properties_typeProperties_userName": {
+			"value": "ritika"
+		},
+		"SqlServer1_properties_typeProperties_server": {
+			"value": "localhost\\SQLEXPRESS"
+		},
+		"SqlServer1_properties_typeProperties_database": {
+			"value": "AdventureWorks2022"
+		},
+		"SqlServer1_properties_typeProperties_userName": {
+			"value": "ritika"
+		},
+		"Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_PL_BLOB_EVENT_Data_parameters_TriggeredFolderPath": {
+			"value": "@triggerBody().folderPath"
+		},
+		"Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_PL_BLOB_EVENT_Data_parameters_TriggeredFileName": {
+			"value": "@triggerBody().fileName"
+		},
+		"Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_typeProperties_scope": {
+			"value": "/subscriptions/121ff561-c007-4ac2-a95a-15f57918f90c/resourceGroups/rg-Ritika-dev/providers/Microsoft.Storage/storageAccounts/adlsritikaoli"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
