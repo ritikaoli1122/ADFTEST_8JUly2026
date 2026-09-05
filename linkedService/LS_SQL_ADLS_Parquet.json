@@ -1,0 +1,21 @@
+{
+	"name": "LS_SQL_ADLS_Parquet",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"server": "localhost\\SQLEXPRESS",
+			"database": "vbadeproject",
+			"encrypt": "optional",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "ritika",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJkODJmZmE1MC1mZjFhLTQ3M2MtYjMwMS03ZGFiYzgxYWYwZDciLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "SHIRritika",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

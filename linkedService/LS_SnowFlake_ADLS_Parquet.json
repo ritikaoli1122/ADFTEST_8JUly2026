@@ -1,0 +1,17 @@
+{
+	"name": "LS_SnowFlake_ADLS_Parquet",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SnowflakeV2",
+		"typeProperties": {
+			"authenticationType": "Basic",
+			"accountIdentifier": "AVUSNWF-VL76014",
+			"user": "RITIKAOLI1122",
+			"database": "DBAZURESNOW",
+			"warehouse": "COMPUTE_WH",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQENFNDgxRDRDLTBGODctNDJEOS04REZBLTkzMkJGMzczQzNBOV9mZmIzMjk0Zi05YzU0LTRkOTQtYjU2Zi0yOGE0YmJhNmRiZTMiDQp9"
+		},
+		"version": "1.1"
+	}
+}

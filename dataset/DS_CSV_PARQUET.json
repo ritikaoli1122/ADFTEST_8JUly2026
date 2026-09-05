@@ -1,43 +1,39 @@
 {
-	"name": "DelimitedText1",
+	"name": "DS_CSV_PARQUET",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "LS_SFTP_Parquet",
+			"referenceName": "LS_CSV_PARQUET",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
-		"type": "DelimitedText",
+		"type": "Parquet",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "olist_customers_dataset.csv",
 				"fileSystem": "input"
 			},
-			"columnDelimiter": ",",
-			"escapeChar": "\\",
-			"firstRowAsHeader": true,
-			"quoteChar": "\""
+			"compressionCodec": "snappy"
 		},
 		"schema": [
 			{
 				"name": "customer_id",
-				"type": "String"
+				"type": "UTF8"
 			},
 			{
 				"name": "customer_unique_id",
-				"type": "String"
+				"type": "UTF8"
 			},
 			{
 				"name": "customer_zip_code_prefix",
-				"type": "String"
+				"type": "UTF8"
 			},
 			{
 				"name": "customer_city",
-				"type": "String"
+				"type": "UTF8"
 			},
 			{
 				"name": "customer_state",
-				"type": "String"
+				"type": "UTF8"
 			}
 		]
 	},
