@@ -1,0 +1,21 @@
+{
+	"name": "DS_EXCEL_ADLS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_EXCEL_PARQUET_ADLS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "Worksheet",
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "olist_order_reviews_dataset1.xlsx",
+				"folderPath": "excel",
+				"container": "input"
+			}
+		},
+		"schema": []
+	}
+}
