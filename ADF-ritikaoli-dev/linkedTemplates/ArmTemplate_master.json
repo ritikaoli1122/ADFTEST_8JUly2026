@@ -107,6 +107,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'SqlServer1'"
 		},
+		"LS_AZSQLDB_CSV_META_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_AZSQLDB_CSV_META'"
+		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsritikaoli.dfs.core.windows.net/"
@@ -283,6 +287,22 @@
 			"type": "string",
 			"defaultValue": "/subscriptions/121ff561-c007-4ac2-a95a-15f57918f90c/resourceGroups/rg-Ritika-dev/providers/Microsoft.Storage/storageAccounts/adlsritikaoli"
 		},
+		"LS_AZSQLDB_CSV_META_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "sql-server-ritika-dev.database.windows.net"
+		},
+		"LS_AZSQLDB_CSV_META_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "sql-db-vb-dev"
+		},
+		"LS_AZSQLDB_CSV_META_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "ritika"
+		},
+		"Tr_sample_csv_properties_PL1_MASTER_parameters_Trigger": {
+			"type": "string",
+			"defaultValue": "Tr_sample_csv"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -454,11 +474,23 @@
 					"LS_SnowFlake_ADLS_Parquet_password": {
 						"value": "[parameters('LS_SnowFlake_ADLS_Parquet_password')]"
 					},
+					"LS_AZSQLDB_CSV_META_password": {
+						"value": "[parameters('LS_AZSQLDB_CSV_META_password')]"
+					},
 					"LS_SnowFlake_ADLS_Parquet_properties_typeProperties_database": {
 						"value": "[parameters('LS_SnowFlake_ADLS_Parquet_properties_typeProperties_database')]"
 					},
 					"LS_SnowFlake_parquet_sasUri": {
 						"value": "[parameters('LS_SnowFlake_parquet_sasUri')]"
+					},
+					"LS_AZSQLDB_CSV_META_properties_typeProperties_server": {
+						"value": "[parameters('LS_AZSQLDB_CSV_META_properties_typeProperties_server')]"
+					},
+					"LS_AZSQLDB_CSV_META_properties_typeProperties_database": {
+						"value": "[parameters('LS_AZSQLDB_CSV_META_properties_typeProperties_database')]"
+					},
+					"LS_AZSQLDB_CSV_META_properties_typeProperties_userName": {
+						"value": "[parameters('LS_AZSQLDB_CSV_META_properties_typeProperties_userName')]"
 					}
 				}
 			},
@@ -574,6 +606,9 @@
 					},
 					"Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_typeProperties_scope": {
 						"value": "[parameters('Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_typeProperties_scope')]"
+					},
+					"Tr_sample_csv_properties_PL1_MASTER_parameters_Trigger": {
+						"value": "[parameters('Tr_sample_csv_properties_PL1_MASTER_parameters_Trigger')]"
 					}
 				}
 			},

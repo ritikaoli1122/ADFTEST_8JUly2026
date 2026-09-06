@@ -80,6 +80,9 @@
 		"SqlServer1_password": {
 			"value": ""
 		},
+		"LS_AZSQLDB_CSV_META_password": {
+			"value": ""
+		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"value": "https://adlsritikaoli.dfs.core.windows.net/"
 		},
@@ -211,6 +214,18 @@
 		},
 		"Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_typeProperties_scope": {
 			"value": "/subscriptions/121ff561-c007-4ac2-a95a-15f57918f90c/resourceGroups/rg-Ritika-dev/providers/Microsoft.Storage/storageAccounts/adlsritikaoli"
+		},
+		"LS_AZSQLDB_CSV_META_properties_typeProperties_server": {
+			"value": "sql-server-ritika-dev.database.windows.net"
+		},
+		"LS_AZSQLDB_CSV_META_properties_typeProperties_database": {
+			"value": "sql-db-vb-dev"
+		},
+		"LS_AZSQLDB_CSV_META_properties_typeProperties_userName": {
+			"value": "ritika"
+		},
+		"Tr_sample_csv_properties_PL1_MASTER_parameters_Trigger": {
+			"value": "Tr_sample_csv"
 		},
 		"containerUri": {
 			"value": ""
