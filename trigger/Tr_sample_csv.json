@@ -8,6 +8,9 @@
 				"pipelineReference": {
 					"referenceName": "PL1_MASTER",
 					"type": "PipelineReference"
+				},
+				"parameters": {
+					"Trigger": "Tr_sample_csv"
 				}
 			}
 		],
