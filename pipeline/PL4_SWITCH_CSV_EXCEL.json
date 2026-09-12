@@ -79,25 +79,12 @@
 							"value": "excel",
 							"activities": [
 								{
-									"name": "EXEC_EXCEL",
-									"type": "ExecutePipeline",
+									"name": "Wait1",
+									"type": "Wait",
 									"dependsOn": [],
-									"policy": {
-										"secureInput": false
-									},
 									"userProperties": [],
 									"typeProperties": {
-										"pipeline": {
-											"referenceName": "PL4_2_EXCEL",
-											"type": "PipelineReference"
-										},
-										"waitOnCompletion": true,
-										"parameters": {
-											"Trigger": {
-												"value": "@pipeline().parameters.Trigger",
-												"type": "Expression"
-											}
-										}
+										"waitTimeInSeconds": 1
 									}
 								}
 							]
