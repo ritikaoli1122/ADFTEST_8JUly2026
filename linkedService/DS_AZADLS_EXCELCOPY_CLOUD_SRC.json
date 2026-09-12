@@ -1,0 +1,15 @@
+{
+	"name": "DS_AZADLS_EXCELCOPY_CLOUD_SRC",
+	"properties": {
+		"parameters": {
+			"storage_account_loc ": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://adlsritikaraw01.dfs.core.windows.net/"
+		}
+	}
+}
