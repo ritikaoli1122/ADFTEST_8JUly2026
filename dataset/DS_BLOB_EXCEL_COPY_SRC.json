@@ -1,0 +1,20 @@
+{
+	"name": "DS_BLOB_EXCEL_COPY_SRC",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_BLOB_EXCEL_COPY_SRC1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "olist_order_reviews_dataset1.xlsx",
+				"folderPath": "excel",
+				"fileSystem": "input"
+			}
+		},
+		"schema": []
+	}
+}
