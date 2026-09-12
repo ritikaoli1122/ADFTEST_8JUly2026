@@ -98,7 +98,13 @@
 					},
 					"dataset": {
 						"referenceName": "DS_AZSQLDB_METADATA",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"TriggerName": {
+								"value": "@pipeline().parameters.Trigger",
+								"type": "Expression"
+							}
+						}
 					}
 				}
 			},
