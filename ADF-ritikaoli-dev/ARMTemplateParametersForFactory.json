@@ -26,6 +26,15 @@
 		"LS_ADLS_TEXT_accountKey": {
 			"value": ""
 		},
+		"LS_AZADLS_EXCELCOPY_CLOUD_SRC_accountKey": {
+			"value": ""
+		},
+		"LS_AZSQLDB_CSV_META_password": {
+			"value": ""
+		},
+		"LS_AZSQLDB_METADATA_password": {
+			"value": ""
+		},
 		"LS_AZSQL_CSV_EXCEL_password": {
 			"value": ""
 		},
@@ -44,6 +53,9 @@
 		"LS_CSV_PARQUET_accountKey": {
 			"value": ""
 		},
+		"LS_EXCEL_PARQUET_ADLS_connectionString": {
+			"value": ""
+		},
 		"LS_Event_Trigger_accountKey": {
 			"value": ""
 		},
@@ -54,6 +66,9 @@
 			"value": ""
 		},
 		"LS_SFTP_Sink_Paequet_accountKey": {
+			"value": ""
+		},
+		"LS_SINK_EXCEL_ADLS_accountKey": {
 			"value": ""
 		},
 		"LS_SQLSERVER_password": {
@@ -80,14 +95,14 @@
 		"SqlServer1_password": {
 			"value": ""
 		},
-		"LS_AZSQLDB_CSV_META_password": {
-			"value": ""
-		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"value": "https://adlsritikaoli.dfs.core.windows.net/"
 		},
 		"AzureDataLakeStorage2_properties_typeProperties_url": {
 			"value": "https://adlsritikaoli.dfs.core.windows.net/"
+		},
+		"DS_AZADLS_EXCELCOPY_CLOUD_SRC_properties_typeProperties_url": {
+			"value": "https://adlsritikaraw01.dfs.core.windows.net/"
 		},
 		"Event_Trigger_ADLS_Parquet_properties_typeProperties_url": {
 			"value": "https://adlsritikaoli.dfs.core.windows.net/"
@@ -100,6 +115,36 @@
 		},
 		"LS_ADLS_TEXT_properties_typeProperties_url": {
 			"value": "https://adlsritikaoli.dfs.core.windows.net/"
+		},
+		"LS_AZADLS_EXCELCOPY_CLOUD_SRC_properties_typeProperties_url": {
+			"value": "https://adlsritikaraw01.dfs.core.windows.net/"
+		},
+		"LS_AZADLS_VB_EXCEL_CLOUD_COPY_properties_typeProperties_url": {
+			"value": "https://adlsritikaraw01.dfs.core.windows.net/"
+		},
+		"LS_AZADLS_VB_EXCEL_CLOUD_COPY1_properties_typeProperties_url": {
+			"value": "https://adlsritikaraw01.dfs.core.windows.net/"
+		},
+		"LS_AZADLS_VB_EXCEL_CLOUD_COPY2_properties_typeProperties_url": {
+			"value": "https://adlsritikaraw01.dfs.core.windows.net/"
+		},
+		"LS_AZSQLDB_CSV_META_properties_typeProperties_server": {
+			"value": "sql-server-ritika-dev.database.windows.net"
+		},
+		"LS_AZSQLDB_CSV_META_properties_typeProperties_database": {
+			"value": "sql-db-vb-dev"
+		},
+		"LS_AZSQLDB_CSV_META_properties_typeProperties_userName": {
+			"value": "ritika"
+		},
+		"LS_AZSQLDB_METADATA_properties_typeProperties_server": {
+			"value": "sql-server-ritika-dev.database.windows.net"
+		},
+		"LS_AZSQLDB_METADATA_properties_typeProperties_database": {
+			"value": "sql-db-vb-dev"
+		},
+		"LS_AZSQLDB_METADATA_properties_typeProperties_userName": {
+			"value": "ritika"
 		},
 		"LS_AZSQL_CSV_EXCEL_properties_typeProperties_server": {
 			"value": "sql-server-ritika-dev.database.windows.net"
@@ -147,6 +192,9 @@
 			"value": "https://adlsritikaraw01.dfs.core.windows.net/"
 		},
 		"LS_SFTP_Sink_Paequet_properties_typeProperties_url": {
+			"value": "https://adlsritikaraw01.dfs.core.windows.net/"
+		},
+		"LS_SINK_EXCEL_ADLS_properties_typeProperties_url": {
 			"value": "https://adlsritikaraw01.dfs.core.windows.net/"
 		},
 		"LS_SQLSERVER_properties_typeProperties_server": {
@@ -214,15 +262,6 @@
 		},
 		"Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_typeProperties_scope": {
 			"value": "/subscriptions/121ff561-c007-4ac2-a95a-15f57918f90c/resourceGroups/rg-Ritika-dev/providers/Microsoft.Storage/storageAccounts/adlsritikaoli"
-		},
-		"LS_AZSQLDB_CSV_META_properties_typeProperties_server": {
-			"value": "sql-server-ritika-dev.database.windows.net"
-		},
-		"LS_AZSQLDB_CSV_META_properties_typeProperties_database": {
-			"value": "sql-db-vb-dev"
-		},
-		"LS_AZSQLDB_CSV_META_properties_typeProperties_userName": {
-			"value": "ritika"
 		},
 		"Tr_sample_csv_properties_PL1_MASTER_parameters_Trigger": {
 			"value": "Tr_sample_csv"
