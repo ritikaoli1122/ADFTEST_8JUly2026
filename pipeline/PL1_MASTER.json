@@ -14,7 +14,7 @@
 				"typeProperties": {
 					"variableName": "trigger_variable",
 					"value": {
-						"value": "@if(equals(pipeline().parameters.Trigger,null), pipeline().TriggerName, pipeline().parameters.Trigger)",
+						"value": "@coalesce(pipeline().parameters.Trigger, pipeline().TriggerName, 'manual')",
 						"type": "Expression"
 					}
 				}
@@ -42,7 +42,7 @@
 					"waitOnCompletion": true,
 					"parameters": {
 						"Trigger": {
-							"value": "@pipeline().parameters.Trigger",
+							"value": "@variables('trigger_variable')",
 							"type": "Expression"
 						}
 					}
@@ -51,7 +51,8 @@
 		],
 		"parameters": {
 			"Trigger": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "manual"
 			}
 		},
 		"variables": {

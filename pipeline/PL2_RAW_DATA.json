@@ -109,7 +109,8 @@
 		],
 		"parameters": {
 			"Trigger": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "pipeline().parameters.Trigger"
 			}
 		},
 		"variables": {
