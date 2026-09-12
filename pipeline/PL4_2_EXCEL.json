@@ -1,6 +1,7 @@
 {
-	"name": "PL_EXCEL",
+	"name": "PL4_2_EXCEL",
 	"properties": {
+		"description": "Metadata-Driven csv\nIngestion Pipeline",
 		"activities": [
 			{
 				"name": "CPY_EXCEL",
@@ -25,7 +26,7 @@
 					"source": {
 						"type": "ExcelSource",
 						"storeSettings": {
-							"type": "AzureBlobStorageReadSettings",
+							"type": "AzureBlobFSReadSettings",
 							"recursive": true,
 							"enablePartitionDiscovery": false
 						}
@@ -51,8 +52,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_EXCEL_ADLS",
-						"type": "DatasetReference"
+						"referenceName": "DS_AZADLS_EXCELCOPY_CLOUD_SRC",
+						"type": "DatasetReference",
+						"parameters": {
+							"storage_account_loc": "(@activity('LKUP_JOB_DETAILS').output.firstRow.sourcedata",
+							"sheetname": "(@activity('LKUP_JOB_DETAILS').output.firstRow.sheetname)",
+							"filename": "(\t@activity('LKUP_JOB_DETAILS').output.firstRow.sourcefile)"
+						}
 					}
 				],
 				"outputs": [

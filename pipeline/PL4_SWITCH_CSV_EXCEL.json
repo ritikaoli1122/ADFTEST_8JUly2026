@@ -61,7 +61,7 @@
 									"userProperties": [],
 									"typeProperties": {
 										"pipeline": {
-											"referenceName": "PL_CSV",
+											"referenceName": "PL4_2_CSV",
 											"type": "PipelineReference"
 										},
 										"waitOnCompletion": true,
@@ -87,7 +87,17 @@
 									},
 									"userProperties": [],
 									"typeProperties": {
-										"waitOnCompletion": true
+										"pipeline": {
+											"referenceName": "PL4_2_EXCEL",
+											"type": "PipelineReference"
+										},
+										"waitOnCompletion": true,
+										"parameters": {
+											"Trigger": {
+												"value": "@pipeline().parameters.Trigger",
+												"type": "Expression"
+											}
+										}
 									}
 								}
 							]

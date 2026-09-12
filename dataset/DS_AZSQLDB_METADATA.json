@@ -5,6 +5,12 @@
 			"referenceName": "LS_AZSQLDB_METADATA",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"TriggerName": {
+				"type": "string",
+				"defaultValue": "@pipeline().parameters.Trigger"
+			}
+		},
 		"annotations": [],
 		"type": "AzureSqlTable",
 		"schema": []

@@ -1,6 +1,7 @@
 {
-	"name": "PL_CSV",
+	"name": "PL4_2_CSV",
 	"properties": {
+		"description": "Metadata-Driven CSV Ingestion Pipeline",
 		"activities": [
 			{
 				"name": "CPY_CSV",
