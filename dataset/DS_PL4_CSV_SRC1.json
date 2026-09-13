@@ -1,0 +1,20 @@
+{
+	"name": "DS_PL4_CSV_SRC1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_PL4_CSV_SRC",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "@concat(     'csv/',     formatDateTime(utcNow(), 'yyy'), '/',     formatDateTime(utcNow(), 'MM'), '/',     formatDateTime(utcNow(), 'dd') )",
+				"fileSystem": "input"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
