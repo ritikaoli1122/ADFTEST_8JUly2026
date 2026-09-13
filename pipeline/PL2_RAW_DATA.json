@@ -49,7 +49,7 @@
 					},
 					"cases": [
 						{
-							"value": "Cloud",
+							"value": "CloudStorage",
 							"activities": [
 								{
 									"name": "EXEC_PL3_CLOUD",
