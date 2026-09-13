@@ -19,6 +19,18 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_PL4_EXCEL_PARQUET_SINK'"
 		},
+		"LS_PL4_CSV_SRC_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_PL4_CSV_SRC'"
+		},
+		"LS_PL4_CSV_PARQUET_SINK_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_PL4_CSV_PARQUET_SINK'"
+		},
+		"LS_LS4_CSV_PARQUET_SINK1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_LS4_CSV_PARQUET_SINK1'"
+		},
 		"LS_PL4_EXCEL_SRC_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsritikaraw01.dfs.core.windows.net/"
@@ -28,6 +40,18 @@
 			"defaultValue": "https://adlsdevvbsorce0011.dfs.core.windows.net/"
 		},
 		"LS_PL4_EXCEL_PARQUET_SINK_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevvbsorce0011.dfs.core.windows.net/"
+		},
+		"LS_PL4_CSV_SRC_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsritikaraw01.dfs.core.windows.net/"
+		},
+		"LS_PL4_CSV_PARQUET_SINK_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevvbsorce0011.dfs.core.windows.net/"
+		},
+		"LS_LS4_CSV_PARQUET_SINK1_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsdevvbsorce0011.dfs.core.windows.net/"
 		}
@@ -82,6 +106,57 @@
 					"accountKey": {
 						"type": "SecureString",
 						"value": "[parameters('LS_PL4_EXCEL_PARQUET_SINK_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_PL4_CSV_SRC')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('LS_PL4_CSV_SRC_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('LS_PL4_CSV_SRC_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_PL4_CSV_PARQUET_SINK')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('LS_PL4_CSV_PARQUET_SINK_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('LS_PL4_CSV_PARQUET_SINK_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_LS4_CSV_PARQUET_SINK1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('LS_LS4_CSV_PARQUET_SINK1_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('LS_LS4_CSV_PARQUET_SINK1_accountKey')]"
 					}
 				}
 			},
@@ -389,10 +464,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
-						"folderPath": {
-							"value": "@concat(     'csv/',     formatDateTime(utcNow(), 'yyy'), '/',     formatDateTime(utcNow(), 'MM'), '/',     formatDateTime(utcNow(), 'dd') )",
-							"type": "Expression"
-						},
+						"fileName": "@concat(     'csv/',     formatDateTime(utcNow(), 'yyy'), '/',     formatDateTime(utcNow(), 'MM'), '/',     formatDateTime(utcNow(), 'dd') )",
 						"fileSystem": "input"
 					},
 					"compressionCodec": "snappy"
@@ -502,67 +574,6 @@
 					"location": {
 						"type": "AzureBlobFSLocation",
 						"fileSystem": "oututeventtriggerstorage"
-					},
-					"compressionCodec": "snappy"
-				},
-				"schema": []
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/DS_REST_ADLS_Parquet')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "LS_REST_ADLS_Parquet",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "Parquet",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobFSLocation",
-						"fileSystem": "rest"
-					},
-					"compressionCodec": "snappy"
-				},
-				"schema": []
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/DS_RestResource')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "LS_RestResource",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "RestResource",
-				"typeProperties": {},
-				"schema": []
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/DS_SINK_EXCEL_ADLS')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "LS_SINK_EXCEL_ADLS",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "Parquet",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobFSLocation",
-						"folderPath": "excel",
-						"fileSystem": "input"
 					},
 					"compressionCodec": "snappy"
 				},

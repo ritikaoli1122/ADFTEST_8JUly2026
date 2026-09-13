@@ -163,6 +163,18 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_PL4_EXCEL_PARQUET_SINK'"
 		},
+		"LS_PL4_CSV_SRC_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_PL4_CSV_SRC'"
+		},
+		"LS_PL4_CSV_PARQUET_SINK_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_PL4_CSV_PARQUET_SINK'"
+		},
+		"LS_LS4_CSV_PARQUET_SINK1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_LS4_CSV_PARQUET_SINK1'"
+		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsritikaoli.dfs.core.windows.net/"
@@ -285,7 +297,7 @@
 		},
 		"LS_CSV_PARQUET_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://adlsritikaraw01.dfs.core.windows.net/"
+			"defaultValue": "https://adlsdevvbsorce0011.dfs.core.windows.net/"
 		},
 		"LS_Event_Trigger_properties_typeProperties_url": {
 			"type": "string",
@@ -428,6 +440,18 @@
 			"defaultValue": "https://adlsdevvbsorce0011.dfs.core.windows.net/"
 		},
 		"LS_PL4_EXCEL_PARQUET_SINK_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevvbsorce0011.dfs.core.windows.net/"
+		},
+		"LS_PL4_CSV_SRC_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsritikaraw01.dfs.core.windows.net/"
+		},
+		"LS_PL4_CSV_PARQUET_SINK_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevvbsorce0011.dfs.core.windows.net/"
+		},
+		"LS_LS4_CSV_PARQUET_SINK1_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsdevvbsorce0011.dfs.core.windows.net/"
 		},
@@ -727,6 +751,15 @@
 					"LS_PL4_EXCEL_PARQUET_SINK_accountKey": {
 						"value": "[parameters('LS_PL4_EXCEL_PARQUET_SINK_accountKey')]"
 					},
+					"LS_PL4_CSV_SRC_accountKey": {
+						"value": "[parameters('LS_PL4_CSV_SRC_accountKey')]"
+					},
+					"LS_PL4_CSV_PARQUET_SINK_accountKey": {
+						"value": "[parameters('LS_PL4_CSV_PARQUET_SINK_accountKey')]"
+					},
+					"LS_LS4_CSV_PARQUET_SINK1_accountKey": {
+						"value": "[parameters('LS_LS4_CSV_PARQUET_SINK1_accountKey')]"
+					},
 					"LS_PL4_EXCEL_SRC_properties_typeProperties_url": {
 						"value": "[parameters('LS_PL4_EXCEL_SRC_properties_typeProperties_url')]"
 					},
@@ -735,6 +768,15 @@
 					},
 					"LS_PL4_EXCEL_PARQUET_SINK_properties_typeProperties_url": {
 						"value": "[parameters('LS_PL4_EXCEL_PARQUET_SINK_properties_typeProperties_url')]"
+					},
+					"LS_PL4_CSV_SRC_properties_typeProperties_url": {
+						"value": "[parameters('LS_PL4_CSV_SRC_properties_typeProperties_url')]"
+					},
+					"LS_PL4_CSV_PARQUET_SINK_properties_typeProperties_url": {
+						"value": "[parameters('LS_PL4_CSV_PARQUET_SINK_properties_typeProperties_url')]"
+					},
+					"LS_LS4_CSV_PARQUET_SINK1_properties_typeProperties_url": {
+						"value": "[parameters('LS_LS4_CSV_PARQUET_SINK1_properties_typeProperties_url')]"
 					}
 				}
 			},
@@ -841,15 +883,6 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
-					},
-					"Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_PL_BLOB_EVENT_Data_parameters_TriggeredFolderPath": {
-						"value": "[parameters('Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_PL_BLOB_EVENT_Data_parameters_TriggeredFolderPath')]"
-					},
-					"Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_PL_BLOB_EVENT_Data_parameters_TriggeredFileName": {
-						"value": "[parameters('Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_PL_BLOB_EVENT_Data_parameters_TriggeredFileName')]"
-					},
-					"Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_typeProperties_scope": {
-						"value": "[parameters('Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_typeProperties_scope')]"
 					}
 				}
 			},
@@ -870,6 +903,15 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_PL_BLOB_EVENT_Data_parameters_TriggeredFolderPath": {
+						"value": "[parameters('Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_PL_BLOB_EVENT_Data_parameters_TriggeredFolderPath')]"
+					},
+					"Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_PL_BLOB_EVENT_Data_parameters_TriggeredFileName": {
+						"value": "[parameters('Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_PL_BLOB_EVENT_Data_parameters_TriggeredFileName')]"
+					},
+					"Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_typeProperties_scope": {
+						"value": "[parameters('Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_typeProperties_scope')]"
 					},
 					"Tr_sample_csv_properties_PL1_MASTER_parameters_Trigger": {
 						"value": "[parameters('Tr_sample_csv_properties_PL1_MASTER_parameters_Trigger')]"

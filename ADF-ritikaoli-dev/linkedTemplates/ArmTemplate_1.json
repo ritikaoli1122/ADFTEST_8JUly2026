@@ -77,7 +77,7 @@
 		},
 		"LS_CSV_PARQUET_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://adlsritikaraw01.dfs.core.windows.net/"
+			"defaultValue": "https://adlsdevvbsorce0011.dfs.core.windows.net/"
 		},
 		"LS_Event_Trigger_properties_typeProperties_url": {
 			"type": "string",

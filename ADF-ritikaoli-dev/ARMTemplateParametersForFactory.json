@@ -122,6 +122,15 @@
 		"LS_PL4_EXCEL_PARQUET_SINK_accountKey": {
 			"value": ""
 		},
+		"LS_PL4_CSV_SRC_accountKey": {
+			"value": ""
+		},
+		"LS_PL4_CSV_PARQUET_SINK_accountKey": {
+			"value": ""
+		},
+		"LS_LS4_CSV_PARQUET_SINK1_accountKey": {
+			"value": ""
+		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"value": "https://adlsritikaoli.dfs.core.windows.net/"
 		},
@@ -213,7 +222,7 @@
 			"value": "https://blobritika.dfs.core.windows.net/"
 		},
 		"LS_CSV_PARQUET_properties_typeProperties_url": {
-			"value": "https://adlsritikaraw01.dfs.core.windows.net/"
+			"value": "https://adlsdevvbsorce0011.dfs.core.windows.net/"
 		},
 		"LS_Event_Trigger_properties_typeProperties_url": {
 			"value": "https://adlsritikaoli.dfs.core.windows.net/"
@@ -321,6 +330,15 @@
 			"value": "https://adlsdevvbsorce0011.dfs.core.windows.net/"
 		},
 		"LS_PL4_EXCEL_PARQUET_SINK_properties_typeProperties_url": {
+			"value": "https://adlsdevvbsorce0011.dfs.core.windows.net/"
+		},
+		"LS_PL4_CSV_SRC_properties_typeProperties_url": {
+			"value": "https://adlsritikaraw01.dfs.core.windows.net/"
+		},
+		"LS_PL4_CSV_PARQUET_SINK_properties_typeProperties_url": {
+			"value": "https://adlsdevvbsorce0011.dfs.core.windows.net/"
+		},
+		"LS_LS4_CSV_PARQUET_SINK1_properties_typeProperties_url": {
 			"value": "https://adlsdevvbsorce0011.dfs.core.windows.net/"
 		}
 	}
