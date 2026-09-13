@@ -1,0 +1,52 @@
+{
+	"name": "DS_REST_ADLS_SINK",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_REST_ADLS_PARQUET_SINK",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@concat(     'REST/',     formatDateTime(utcNow(), 'yyy'), '/',     formatDateTime(utcNow(), 'MM'), '/',     formatDateTime(utcNow(), 'dd') )\n",
+					"type": "Expression"
+				},
+				"fileSystem": "input"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "review_id",
+				"type": "UTF8"
+			},
+			{
+				"name": "order_id",
+				"type": "UTF8"
+			},
+			{
+				"name": "review_score",
+				"type": "UTF8"
+			},
+			{
+				"name": "review_comment_title",
+				"type": "UTF8"
+			},
+			{
+				"name": "review_comment_message",
+				"type": "UTF8"
+			},
+			{
+				"name": "review_creation_date",
+				"type": "UTF8"
+			},
+			{
+				"name": "review_answer_timestamp",
+				"type": "UTF8"
+			}
+		]
+	}
+}

@@ -1,0 +1,45 @@
+{
+	"name": "DS_JSON_ADLS_SRC",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_JSON_ADLS_SRC",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "order_review.json",
+				"folderPath": "Json",
+				"fileSystem": "input"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"review_id": {
+					"type": "string"
+				},
+				"order_id": {
+					"type": "string"
+				},
+				"review_score": {
+					"type": "string"
+				},
+				"review_comment_title": {
+					"type": "string"
+				},
+				"review_comment_message": {
+					"type": "string"
+				},
+				"review_creation_date": {
+					"type": "string"
+				},
+				"review_answer_timestamp": {
+					"type": "string"
+				}
+			}
+		}
+	}
+}

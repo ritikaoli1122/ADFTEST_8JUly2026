@@ -1,0 +1,23 @@
+{
+	"name": "DS_JSON_ADLS_SINK",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_JSON_ADLS_SINK",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": {
+					"value": "@concat(     'Json/',     formatDateTime(utcNow(), 'yyy'), '/',     formatDateTime(utcNow(), 'MM'), '/',     formatDateTime(utcNow(), 'dd') )",
+					"type": "Expression"
+				},
+				"fileSystem": "input"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
