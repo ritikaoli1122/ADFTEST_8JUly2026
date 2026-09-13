@@ -1,0 +1,21 @@
+{
+	"name": "DS_PL4_EXCEL_SRC",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_PL4_EXCEL_SRC",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "Worksheet",
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "olist_order_reviews_dataset1.xlsx",
+				"folderPath": "excel",
+				"fileSystem": "input"
+			}
+		},
+		"schema": []
+	}
+}

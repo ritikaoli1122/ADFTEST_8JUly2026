@@ -157,7 +157,7 @@
 					"storedProcedureParameters": {
 						"error": {
 							"value": {
-								"value": "@activity('CPY_EXCEL').error.message",
+								"value": "@activity('COPY_EXCEL').error.message",
 								"type": "Expression"
 							},
 							"type": "String"
@@ -232,13 +232,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_BLOB_EXCEL_COPY_SRC",
+						"referenceName": "DS_PL4_EXCEL_SRC",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_BLOB_EXCEL_COPY_SINK",
+						"referenceName": "DS_PL4_EXCEL_PARQUET_SINK",
 						"type": "DatasetReference"
 					}
 				]
