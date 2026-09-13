@@ -59,13 +59,13 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'LS_AZSQL_SRCDB'"
 		},
-		"LS_CSV_ADLS_accountKey": {
+		"LS_BLOB_EXCEL_COPY_SINK_accountKey": {
 			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'LS_CSV_ADLS'"
+			"metadata": "Secure string for 'accountKey' of 'LS_BLOB_EXCEL_COPY_SINK'"
 		},
-		"LS_CSV_ADLS1_connectionString": {
+		"LS_BLOB_EXCEL_COPY_SRC_accountKey": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'LS_CSV_ADLS1'"
+			"metadata": "Secure string for 'accountKey' of 'LS_BLOB_EXCEL_COPY_SRC'"
 		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"type": "string",
@@ -97,7 +97,7 @@
 		},
 		"LS_AZADLS_EXCELCOPY_CLOUD_SRC_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://adlsritikaraw01.dfs.core.windows.net/"
+			"defaultValue": "https://blobritika.dfs.core.windows.net/"
 		},
 		"LS_AZADLS_VB_EXCEL_CLOUD_COPY_properties_typeProperties_url": {
 			"type": "string",
@@ -171,7 +171,11 @@
 			"type": "string",
 			"defaultValue": "ritika"
 		},
-		"LS_CSV_ADLS_properties_typeProperties_url": {
+		"LS_BLOB_EXCEL_COPY_SINK_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsritikaraw01.dfs.core.windows.net/"
+		},
+		"LS_BLOB_EXCEL_COPY_SRC_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://blobritika.dfs.core.windows.net/"
 		}
@@ -341,11 +345,6 @@
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"parameters": {
-					"storage_account_loc": {
-						"type": "string"
-					}
-				},
 				"annotations": [],
 				"type": "AzureBlobFS",
 				"typeProperties": {
@@ -530,31 +529,35 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/LS_CSV_ADLS')]",
+			"name": "[concat(parameters('factoryName'), '/LS_BLOB_EXCEL_COPY_SINK')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"annotations": [],
 				"type": "AzureBlobFS",
 				"typeProperties": {
-					"url": "[parameters('LS_CSV_ADLS_properties_typeProperties_url')]",
+					"url": "[parameters('LS_BLOB_EXCEL_COPY_SINK_properties_typeProperties_url')]",
 					"accountKey": {
 						"type": "SecureString",
-						"value": "[parameters('LS_CSV_ADLS_accountKey')]"
+						"value": "[parameters('LS_BLOB_EXCEL_COPY_SINK_accountKey')]"
 					}
 				}
 			},
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/LS_CSV_ADLS1')]",
+			"name": "[concat(parameters('factoryName'), '/LS_BLOB_EXCEL_COPY_SRC')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"annotations": [],
-				"type": "AzureBlobStorage",
+				"type": "AzureBlobFS",
 				"typeProperties": {
-					"connectionString": "[parameters('LS_CSV_ADLS1_connectionString')]"
+					"url": "[parameters('LS_BLOB_EXCEL_COPY_SRC_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('LS_BLOB_EXCEL_COPY_SRC_accountKey')]"
+					}
 				}
 			},
 			"dependsOn": []

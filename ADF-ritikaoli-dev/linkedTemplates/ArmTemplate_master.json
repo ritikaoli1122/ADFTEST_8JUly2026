@@ -59,6 +59,18 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'LS_AZSQL_SRCDB'"
 		},
+		"LS_BLOB_EXCEL_COPY_SINK_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_BLOB_EXCEL_COPY_SINK'"
+		},
+		"LS_BLOB_EXCEL_COPY_SRC_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_BLOB_EXCEL_COPY_SRC'"
+		},
+		"LS_BLOB_EXCEL_COPY_SRC1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_BLOB_EXCEL_COPY_SRC1'"
+		},
 		"LS_CSV_ADLS_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_CSV_ADLS'"
@@ -127,6 +139,30 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'SqlServer1'"
 		},
+		"LS_JSON_ADLS_SRC_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_JSON_ADLS_SRC'"
+		},
+		"LS_JSON_ADLS_SINK_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_JSON_ADLS_SINK'"
+		},
+		"LS_REST_ADLS_PARQUET_SINK_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_REST_ADLS_PARQUET_SINK'"
+		},
+		"LS_PL4_EXCEL_SRC_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_PL4_EXCEL_SRC'"
+		},
+		"LS_PL4_EXCEL_SINK_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_PL4_EXCEL_SINK'"
+		},
+		"LS_PL4_EXCEL_PARQUET_SINK_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_PL4_EXCEL_PARQUET_SINK'"
+		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsritikaoli.dfs.core.windows.net/"
@@ -157,7 +193,7 @@
 		},
 		"LS_AZADLS_EXCELCOPY_CLOUD_SRC_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://adlsritikaraw01.dfs.core.windows.net/"
+			"defaultValue": "https://blobritika.dfs.core.windows.net/"
 		},
 		"LS_AZADLS_VB_EXCEL_CLOUD_COPY_properties_typeProperties_url": {
 			"type": "string",
@@ -230,6 +266,18 @@
 		"LS_AZSQL_SRCDB_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "ritika"
+		},
+		"LS_BLOB_EXCEL_COPY_SINK_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsritikaraw01.dfs.core.windows.net/"
+		},
+		"LS_BLOB_EXCEL_COPY_SRC_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://blobritika.dfs.core.windows.net/"
+		},
+		"LS_BLOB_EXCEL_COPY_SRC1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://blobritika.dfs.core.windows.net/"
 		},
 		"LS_CSV_ADLS_properties_typeProperties_url": {
 			"type": "string",
@@ -355,6 +403,34 @@
 			"type": "string",
 			"defaultValue": "Tr_sample_csv"
 		},
+		"LS_JSON_ADLS_SRC_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevisionboardraw012.dfs.core.windows.net/"
+		},
+		"LS_JSON_ADLS_SINK_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevvbsorce0011.dfs.core.windows.net/"
+		},
+		"LS_RESTAPI_SRC_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://retoolapi.dev/WNDyhS/data"
+		},
+		"LS_REST_ADLS_PARQUET_SINK_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevvbsorce0011.dfs.core.windows.net/"
+		},
+		"LS_PL4_EXCEL_SRC_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsritikaraw01.dfs.core.windows.net/"
+		},
+		"LS_PL4_EXCEL_SINK_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevvbsorce0011.dfs.core.windows.net/"
+		},
+		"LS_PL4_EXCEL_PARQUET_SINK_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevvbsorce0011.dfs.core.windows.net/"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -421,11 +497,11 @@
 					"LS_AZSQL_SRCDB_password": {
 						"value": "[parameters('LS_AZSQL_SRCDB_password')]"
 					},
-					"LS_CSV_ADLS_accountKey": {
-						"value": "[parameters('LS_CSV_ADLS_accountKey')]"
+					"LS_BLOB_EXCEL_COPY_SINK_accountKey": {
+						"value": "[parameters('LS_BLOB_EXCEL_COPY_SINK_accountKey')]"
 					},
-					"LS_CSV_ADLS1_connectionString": {
-						"value": "[parameters('LS_CSV_ADLS1_connectionString')]"
+					"LS_BLOB_EXCEL_COPY_SRC_accountKey": {
+						"value": "[parameters('LS_BLOB_EXCEL_COPY_SRC_accountKey')]"
 					},
 					"AzureDataLakeStorage1_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
@@ -505,8 +581,11 @@
 					"LS_AZSQL_SRCDB_properties_typeProperties_userName": {
 						"value": "[parameters('LS_AZSQL_SRCDB_properties_typeProperties_userName')]"
 					},
-					"LS_CSV_ADLS_properties_typeProperties_url": {
-						"value": "[parameters('LS_CSV_ADLS_properties_typeProperties_url')]"
+					"LS_BLOB_EXCEL_COPY_SINK_properties_typeProperties_url": {
+						"value": "[parameters('LS_BLOB_EXCEL_COPY_SINK_properties_typeProperties_url')]"
+					},
+					"LS_BLOB_EXCEL_COPY_SRC_properties_typeProperties_url": {
+						"value": "[parameters('LS_BLOB_EXCEL_COPY_SRC_properties_typeProperties_url')]"
 					}
 				}
 			},
@@ -525,6 +604,15 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"LS_BLOB_EXCEL_COPY_SRC1_accountKey": {
+						"value": "[parameters('LS_BLOB_EXCEL_COPY_SRC1_accountKey')]"
+					},
+					"LS_CSV_ADLS_accountKey": {
+						"value": "[parameters('LS_CSV_ADLS_accountKey')]"
+					},
+					"LS_CSV_ADLS1_connectionString": {
+						"value": "[parameters('LS_CSV_ADLS1_connectionString')]"
 					},
 					"LS_CSV_PARQUET_accountKey": {
 						"value": "[parameters('LS_CSV_PARQUET_accountKey')]"
@@ -552,6 +640,21 @@
 					},
 					"LS_SnowFlake_ADLS_Parquet_password": {
 						"value": "[parameters('LS_SnowFlake_ADLS_Parquet_password')]"
+					},
+					"LS_JSON_ADLS_SRC_accountKey": {
+						"value": "[parameters('LS_JSON_ADLS_SRC_accountKey')]"
+					},
+					"LS_JSON_ADLS_SINK_accountKey": {
+						"value": "[parameters('LS_JSON_ADLS_SINK_accountKey')]"
+					},
+					"LS_REST_ADLS_PARQUET_SINK_accountKey": {
+						"value": "[parameters('LS_REST_ADLS_PARQUET_SINK_accountKey')]"
+					},
+					"LS_BLOB_EXCEL_COPY_SRC1_properties_typeProperties_url": {
+						"value": "[parameters('LS_BLOB_EXCEL_COPY_SRC1_properties_typeProperties_url')]"
+					},
+					"LS_CSV_ADLS_properties_typeProperties_url": {
+						"value": "[parameters('LS_CSV_ADLS_properties_typeProperties_url')]"
 					},
 					"LS_CSV_PARQUET_properties_typeProperties_url": {
 						"value": "[parameters('LS_CSV_PARQUET_properties_typeProperties_url')]"
@@ -582,6 +685,18 @@
 					},
 					"LS_SnowFlake_parquet_sasUri": {
 						"value": "[parameters('LS_SnowFlake_parquet_sasUri')]"
+					},
+					"LS_JSON_ADLS_SRC_properties_typeProperties_url": {
+						"value": "[parameters('LS_JSON_ADLS_SRC_properties_typeProperties_url')]"
+					},
+					"LS_JSON_ADLS_SINK_properties_typeProperties_url": {
+						"value": "[parameters('LS_JSON_ADLS_SINK_properties_typeProperties_url')]"
+					},
+					"LS_RESTAPI_SRC_properties_typeProperties_url": {
+						"value": "[parameters('LS_RESTAPI_SRC_properties_typeProperties_url')]"
+					},
+					"LS_REST_ADLS_PARQUET_SINK_properties_typeProperties_url": {
+						"value": "[parameters('LS_REST_ADLS_PARQUET_SINK_properties_typeProperties_url')]"
 					}
 				}
 			},
@@ -603,6 +718,44 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"LS_PL4_EXCEL_SRC_accountKey": {
+						"value": "[parameters('LS_PL4_EXCEL_SRC_accountKey')]"
+					},
+					"LS_PL4_EXCEL_SINK_accountKey": {
+						"value": "[parameters('LS_PL4_EXCEL_SINK_accountKey')]"
+					},
+					"LS_PL4_EXCEL_PARQUET_SINK_accountKey": {
+						"value": "[parameters('LS_PL4_EXCEL_PARQUET_SINK_accountKey')]"
+					},
+					"LS_PL4_EXCEL_SRC_properties_typeProperties_url": {
+						"value": "[parameters('LS_PL4_EXCEL_SRC_properties_typeProperties_url')]"
+					},
+					"LS_PL4_EXCEL_SINK_properties_typeProperties_url": {
+						"value": "[parameters('LS_PL4_EXCEL_SINK_properties_typeProperties_url')]"
+					},
+					"LS_PL4_EXCEL_PARQUET_SINK_properties_typeProperties_url": {
+						"value": "[parameters('LS_PL4_EXCEL_PARQUET_SINK_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ADF-ritikaoli-dev_ArmTemplate_1')]"
+			]
+		},
+		{
+			"name": "ADF-ritikaoli-dev_ArmTemplate_3",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_3.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
 					"LS_SQLSERVER_password": {
 						"value": "[parameters('LS_SQLSERVER_password')]"
 					},
@@ -617,6 +770,9 @@
 					},
 					"LS_SqlServerTable1_password": {
 						"value": "[parameters('LS_SqlServerTable1_password')]"
+					},
+					"SqlServer1_password": {
+						"value": "[parameters('SqlServer1_password')]"
 					},
 					"LS_SQLSERVER_properties_typeProperties_server": {
 						"value": "[parameters('LS_SQLSERVER_properties_typeProperties_server')]"
@@ -656,29 +812,6 @@
 					},
 					"LS_SqlServerTable1_properties_typeProperties_userName": {
 						"value": "[parameters('LS_SqlServerTable1_properties_typeProperties_userName')]"
-					}
-				}
-			},
-			"dependsOn": [
-				"[resourceId('Microsoft.Resources/deployments', 'ADF-ritikaoli-dev_ArmTemplate_1')]"
-			]
-		},
-		{
-			"name": "ADF-ritikaoli-dev_ArmTemplate_3",
-			"type": "Microsoft.Resources/deployments",
-			"apiVersion": "2024-03-01",
-			"properties": {
-				"mode": "incremental",
-				"templateLink": {
-					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_3.json', parameters('containerSasToken'))]",
-					"contentVersion": "1.0.0.0"
-				},
-				"parameters": {
-					"factoryName": {
-						"value": "[parameters('factoryName')]"
-					},
-					"SqlServer1_password": {
-						"value": "[parameters('SqlServer1_password')]"
 					},
 					"SqlServer1_properties_typeProperties_server": {
 						"value": "[parameters('SqlServer1_properties_typeProperties_server')]"
@@ -688,15 +821,6 @@
 					},
 					"SqlServer1_properties_typeProperties_userName": {
 						"value": "[parameters('SqlServer1_properties_typeProperties_userName')]"
-					},
-					"Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_PL_BLOB_EVENT_Data_parameters_TriggeredFolderPath": {
-						"value": "[parameters('Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_PL_BLOB_EVENT_Data_parameters_TriggeredFolderPath')]"
-					},
-					"Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_PL_BLOB_EVENT_Data_parameters_TriggeredFileName": {
-						"value": "[parameters('Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_PL_BLOB_EVENT_Data_parameters_TriggeredFileName')]"
-					},
-					"Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_typeProperties_scope": {
-						"value": "[parameters('Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_typeProperties_scope')]"
 					}
 				}
 			},
@@ -718,13 +842,42 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_PL_BLOB_EVENT_Data_parameters_TriggeredFolderPath": {
+						"value": "[parameters('Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_PL_BLOB_EVENT_Data_parameters_TriggeredFolderPath')]"
+					},
+					"Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_PL_BLOB_EVENT_Data_parameters_TriggeredFileName": {
+						"value": "[parameters('Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_PL_BLOB_EVENT_Data_parameters_TriggeredFileName')]"
+					},
+					"Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_typeProperties_scope": {
+						"value": "[parameters('Event_Trigger_Blobdata_ADLS_CSV_Parquet_properties_typeProperties_scope')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ADF-ritikaoli-dev_ArmTemplate_3')]"
+			]
+		},
+		{
+			"name": "ADF-ritikaoli-dev_ArmTemplate_5",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_5.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
 					"Tr_sample_csv_properties_PL1_MASTER_parameters_Trigger": {
 						"value": "[parameters('Tr_sample_csv_properties_PL1_MASTER_parameters_Trigger')]"
 					}
 				}
 			},
 			"dependsOn": [
-				"[resourceId('Microsoft.Resources/deployments', 'ADF-ritikaoli-dev_ArmTemplate_3')]"
+				"[resourceId('Microsoft.Resources/deployments', 'ADF-ritikaoli-dev_ArmTemplate_4')]"
 			]
 		}
 	]

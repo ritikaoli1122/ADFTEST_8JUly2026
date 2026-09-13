@@ -44,6 +44,15 @@
 		"LS_AZSQL_SRCDB_password": {
 			"value": ""
 		},
+		"LS_BLOB_EXCEL_COPY_SINK_accountKey": {
+			"value": ""
+		},
+		"LS_BLOB_EXCEL_COPY_SRC_accountKey": {
+			"value": ""
+		},
+		"LS_BLOB_EXCEL_COPY_SRC1_accountKey": {
+			"value": ""
+		},
 		"LS_CSV_ADLS_accountKey": {
 			"value": ""
 		},
@@ -95,6 +104,24 @@
 		"SqlServer1_password": {
 			"value": ""
 		},
+		"LS_JSON_ADLS_SRC_accountKey": {
+			"value": ""
+		},
+		"LS_JSON_ADLS_SINK_accountKey": {
+			"value": ""
+		},
+		"LS_REST_ADLS_PARQUET_SINK_accountKey": {
+			"value": ""
+		},
+		"LS_PL4_EXCEL_SRC_accountKey": {
+			"value": ""
+		},
+		"LS_PL4_EXCEL_SINK_accountKey": {
+			"value": ""
+		},
+		"LS_PL4_EXCEL_PARQUET_SINK_accountKey": {
+			"value": ""
+		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"value": "https://adlsritikaoli.dfs.core.windows.net/"
 		},
@@ -117,7 +144,7 @@
 			"value": "https://adlsritikaoli.dfs.core.windows.net/"
 		},
 		"LS_AZADLS_EXCELCOPY_CLOUD_SRC_properties_typeProperties_url": {
-			"value": "https://adlsritikaraw01.dfs.core.windows.net/"
+			"value": "https://blobritika.dfs.core.windows.net/"
 		},
 		"LS_AZADLS_VB_EXCEL_CLOUD_COPY_properties_typeProperties_url": {
 			"value": "https://adlsritikaraw01.dfs.core.windows.net/"
@@ -172,6 +199,15 @@
 		},
 		"LS_AZSQL_SRCDB_properties_typeProperties_userName": {
 			"value": "ritika"
+		},
+		"LS_BLOB_EXCEL_COPY_SINK_properties_typeProperties_url": {
+			"value": "https://adlsritikaraw01.dfs.core.windows.net/"
+		},
+		"LS_BLOB_EXCEL_COPY_SRC_properties_typeProperties_url": {
+			"value": "https://blobritika.dfs.core.windows.net/"
+		},
+		"LS_BLOB_EXCEL_COPY_SRC1_properties_typeProperties_url": {
+			"value": "https://blobritika.dfs.core.windows.net/"
 		},
 		"LS_CSV_ADLS_properties_typeProperties_url": {
 			"value": "https://blobritika.dfs.core.windows.net/"
@@ -265,6 +301,27 @@
 		},
 		"Tr_sample_csv_properties_PL1_MASTER_parameters_Trigger": {
 			"value": "Tr_sample_csv"
+		},
+		"LS_JSON_ADLS_SRC_properties_typeProperties_url": {
+			"value": "https://adlsdevisionboardraw012.dfs.core.windows.net/"
+		},
+		"LS_JSON_ADLS_SINK_properties_typeProperties_url": {
+			"value": "https://adlsdevvbsorce0011.dfs.core.windows.net/"
+		},
+		"LS_RESTAPI_SRC_properties_typeProperties_url": {
+			"value": "https://retoolapi.dev/WNDyhS/data"
+		},
+		"LS_REST_ADLS_PARQUET_SINK_properties_typeProperties_url": {
+			"value": "https://adlsdevvbsorce0011.dfs.core.windows.net/"
+		},
+		"LS_PL4_EXCEL_SRC_properties_typeProperties_url": {
+			"value": "https://adlsritikaraw01.dfs.core.windows.net/"
+		},
+		"LS_PL4_EXCEL_SINK_properties_typeProperties_url": {
+			"value": "https://adlsdevvbsorce0011.dfs.core.windows.net/"
+		},
+		"LS_PL4_EXCEL_PARQUET_SINK_properties_typeProperties_url": {
+			"value": "https://adlsdevvbsorce0011.dfs.core.windows.net/"
 		}
 	}
 }
