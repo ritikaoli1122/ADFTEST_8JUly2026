@@ -258,7 +258,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_PL4_CSV_SRC1",
+						"referenceName": "DS_LS4_CSV_PARQUET_SINK1",
 						"type": "DatasetReference"
 					}
 				]
